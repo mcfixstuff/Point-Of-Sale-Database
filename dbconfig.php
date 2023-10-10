@@ -16,7 +16,7 @@ $database = "mysql"; // replace with your actual database name
 if (!mysqli_real_connect($con, $host, $username, $password, $database, 3306, MYSQLI_CLIENT_SSL)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-
+/*
 // Sample query to test connection and fetch data
 $query = "SELECT * FROM your_table_name"; // replace 'your_table_name' with one of your table names
 $result = mysqli_query($con, $query);
@@ -30,6 +30,7 @@ if ($result) {
 } else {
     echo "Error: " . mysqli_error($con);
 }
+*/
 
 // Close the database connection
 mysqli_close($con);
