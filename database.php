@@ -1,6 +1,6 @@
 <?php
 $host = "pospizza.mysql.database.azure.com";
-$dbname = "mysql"; //unknown sys?
+$dbname = "mysql"; //sys?
 $username = "danielgarza";
 $password = "#drgarza8";
 $port = 3306;
