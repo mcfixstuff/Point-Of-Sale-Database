@@ -10,53 +10,71 @@ Team Members
     David Cooper
     Eric Parsons
 
-
 The following technologies were used to develop this project:
 
     HTML/CSS/JavaScript
     PHP
     MySQL
     Microsoft Azure
-    MySQLWorkbench
+    MySQL Workbench
     GitHub
 
-How to Run the Project
+Steps to setup project:
+    1. Create Azure Database for MySQL flexible server
+    2. Connect MySQL Workbench to Azure Database
+    3. Create Azure Web App
+    4. Setup continous deployment from Github repository to Web App
+    5. Connect Web App to Azure Database
+    
+    Now Workbench is connected to the database, the app is connected to the database, and the repository is connected to the app.
 
-    Clone the repository to your local machine.
-    Create an Azure Web App and deploy the project files to it.
-    Create an Azure SQL flexible server and import all the dump files in the "dump" folder into your database.
-    Update the database connection details in the database.php file to match your Azure SQL server credentials.
-    Access the web app URL to use the library management system.
+
+
+To create an Azure SQL flexible server:
+
+    Log in to the Azure portal (https://portal.azure.com).
+    Click on "Create a resource" in the upper left-hand corner of the screen.
+    Search for "Azure SQL" and select "Azure Database for MySQL servers" from the results.
+    Click "Create" to begin creating the server.
+    Select Flexible Server.
+    Fill out the required information, such as server name, admin username and password, and location. This will be needed when connecting to Workbench.
+    Choose the appropriate pricing tier and click "Review + create" to review your selections.
+    Click "Create" to create the server.
+    Once the server is created, click on the "Networing" tab and add your IP address to the firewall rules. You can do this by clicking "+ Add current client IP address".
+    Go to databases and select Add. Name the database and select Character Set: utf8mb4, Collation: utf8mb4_unicode_ci
+    Now your server is created.
+
+
+To connect with MySQL workbench, follow the steps below:
+
+    Click the + symbol in the MySQL Connections tab to add a new connection.
+    Enter a name for the connection in the Connection name field.
+    Select Standard (TCP/IP) as the Connection Type.
+    Enter {servername}.mysql.database.azure.com in hostname field.
+    Enter {adminuser} as username and then enter your Password.
+    Leave port # as 3306
+    Go to the SSL tab and update the Use SSL field to Require.
+    In the SSL CA File field, enter the file location of the    DigiCertGlobalRootCA.crt.pem file.
+    Enter same password for the admin user from the Azure Server
+    Click Test Connection to test the connection.
+    If the connection is successful, click OK to save the connection.
+    Your Azure database is now connected to Workbench.
+
 
 To create an Azure Web App and deploy the project files to it, you can follow these steps:
 
     Log in to the Azure portal (https://portal.azure.com/).
-    Click on "Create a resource" button in the left menu, then select "Web App" under "Web + Mobile".
+    Click on "Create a resource" button in the left menu, then select "Web App".
     Fill in the required information, such as the subscription, resource group, name of the web app, and operating system.
-    Under "Publish", select "Code" and then choose your preferred deployment method. You can use FTP/S, GitHub, or Azure DevOps.
-    If you choose FTP/S, you will need to configure the FTP/S settings for the web app in the Azure portal.
-    Once the web app is created, you can deploy your project files by uploading them through the deployment method you chose.
+    Under "Publish", select "Code".
+    Under "Runtime stack", select PHP (latest version).
+    Under the deployment tab, enable continous deployment, and link the GitHub repository you will use for your project. This connects the Web App to the repository. Once the web app is created, you can deploy your project files by uploading to this repository.
+    Under the networking tab, ensure "Enable public access" is on.
     After the deployment is complete, you can access the web app through its URL in the Azure portal
-
-    For further information: https://learn.microsoft.com/en-us/azure/app-service/quickstart-php?tabs=cli&pivots=platform-windows
-
-    Note: You will also need to create an Azure SQL Database and update the database connection details in the project files to connect to the database. You can follow the instructions on the Azure portal to create the SQL Database and obtain the connection details.
-
-To create an Azure SQL flexible server and import all the dump files in the "dump" folder into your database, follow these steps:
-
-    Log in to the Azure portal (https://portal.azure.com).
-    Click on "Create a resource" in the upper left-hand corner of the screen.
-    Search for "Azure SQL" and select "Azure SQL flexible server" from the results.
-    Click "Create" to begin creating the server.
-    Fill out the required information, such as server name, admin username and password, and location.
-    Choose the appropriate pricing tier and click "Review + create" to review your selections.
-    Click "Create" to create the server.
-    Once the server is created, click on the "Firewalls and virtual networks" tab and add your IP address to the firewall rules.
-    Next, click on "Query editor (preview)" in the left-hand menu.
-    Connect to your database using the server name, admin username and password, and the database name you created earlier.
-    Upload the dump files from the "dump" folder using the "Import Data-tier Application" feature in the query editor.
-    Once the import is complete, you can connect to the database using the database connection details in the "database.php" file of your project.
-
-    For further information: https://learn.microsoft.com/en-us/azure/mysql/flexible-server/quickstart-create-server-portal
-
-    Note: Make sure to update the database connection details in the "database.php" file to match your Azure SQL flexible server.
+    Now select review and create.
+    Connect to your database. Under configuration, select "New application setting" and enter the following individually:
+        DB_HOST using the server name
+        DB_NAME using admin username
+        DB_PASS using adminusername password
+        DB_NAME using the database name you created earlier.
+    Your Azure database is now connected to the Web App.
