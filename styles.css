@@ -14,7 +14,7 @@ body {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: url('https://static.wixstatic.com/media/cc8b7c_d2ede1941cb143bd9a67c724d81972b4~mv2.png/v1/fill/w_480,h_271,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cc8b7c_d2ede1941cb143bd9a67c724d81972b4~mv2.png.jpg') no-repeat center center fixed; 
+        background: url('pizza.webp') no-repeat center center fixed; 
         background-size: cover; 
         color: #fff;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
