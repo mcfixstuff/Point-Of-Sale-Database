@@ -1,24 +1,15 @@
 /* CSS file that will contain all CSS for database */
 body {
-    /* font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280);
+    /* background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280); */
+    background: url('background.jpg') no-repeat center center fixed; 
+    background-size: cover; 
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
-    body {
-        font-family: 'Trebuchet MS', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: url('pizza.jpeg.webp') no-repeat center center fixed; 
-        background-size: cover; 
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
 }
 
