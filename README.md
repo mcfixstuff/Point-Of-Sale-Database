@@ -39,6 +39,7 @@ To create an Azure SQL flexible server:
     Choose the appropriate pricing tier and click "Review + create" to review your selections.
     Click "Create" to create the server.
     Once the server is created, click on the "Networing" tab and add your IP address to the firewall rules. You can do this by clicking "+ Add current client IP address".
+    You will need to update your IP address anytime you access the database from a new IP.
     Go to databases and select Add. Name the database and select:
         Character Set: utf8mb4
         Collation: utf8mb4_unicode_ci
@@ -78,3 +79,14 @@ To create an Azure Web App and deploy the project files to it, you can follow th
         DB_NAME using the database name you created earlier.
     Your Azure database is now connected to the Web App.
 
+To give access to partners.
+
+    Have the user give you their IP address and manually input the IP under "Networking" in the Azure database. 
+    From the admin user's account in MySQL Workbench, run the command: CREATE USER 'username'@'%' IDENTIFIED BY 'password'
+    Then run the command: GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'%'
+    This will create the username and password for the user.
+    Now have the user go to MySQL Workbench and enter the server name under hostname: {servername}.mysql.database.azure.com
+    Enter the username and password the admin created for the user.
+    Test connection and press OK after successfully connecting.
+    
+    
