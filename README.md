@@ -20,13 +20,13 @@ The following technologies were used to develop this project:
     GitHub
 
 Steps to setup project:
+
     1. Create Azure Database for MySQL flexible server
     2. Connect MySQL Workbench to Azure Database
     3. Create Azure Web App
     4. Setup continous deployment from Github repository to Web App
     5. Connect Web App to Azure Database
-    
-    Now Workbench is connected to the database, the app is connected to the database, and the repository is connected to the app.
+     Now Workbench is connected to the database, the app is connected to the database, and the repository is connected to the app.
 
 
 
