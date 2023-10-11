@@ -11,7 +11,7 @@ mysqli_ssl_set($con, NULL, NULL, $path_to_CA_cert, NULL, NULL);
 $host = "pospizza.mysql.database.azure.com";
 $username = "danielgarza";
 $password = "#drgarza8"; // replace with your actual password
-$database = "mysql"; // replace with your actual database name
+$database = "pos"; // replace with your actual database name
 
 if (!mysqli_real_connect($con, $host, $username, $password, $database, 3306, MYSQLI_CLIENT_SSL)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
