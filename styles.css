@@ -1,13 +1,25 @@
 /* CSS file that will contain all CSS for database */
 body {
-    font-family: 'Trebuchet MS', sans-serif;
+    /* font-family: 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280);
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    body {
+        font-family: 'Trebuchet MS', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url('https://static.wixstatic.com/media/cc8b7c_d2ede1941cb143bd9a67c724d81972b4~mv2.png/v1/fill/w_480,h_271,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cc8b7c_d2ede1941cb143bd9a67c724d81972b4~mv2.png.jpg') no-repeat center center fixed; 
+        background-size: cover; 
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
 }
 
 h1 {
