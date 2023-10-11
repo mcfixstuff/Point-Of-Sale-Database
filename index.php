@@ -1,3 +1,4 @@
+<!-- welcome page to web app -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

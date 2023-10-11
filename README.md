@@ -79,7 +79,7 @@ To create an Azure Web App and deploy the project files to it, you can follow th
         DB_NAME using the database name you created earlier.
     Your Azure database is now connected to the Web App.
 
-To give access to partners:
+To give databse access to other users:
 
     Have the user give you their IP address and manually input the IP under "Networking" in the Azure database. 
     From the admin user's account in MySQL Workbench, run the command: CREATE USER 'username'@'%' IDENTIFIED BY 'password'
