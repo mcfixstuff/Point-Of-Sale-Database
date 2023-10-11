@@ -28,8 +28,6 @@ Steps to setup project:
     5. Connect Web App to Azure Database
      Now Workbench is connected to the database, the app is connected to the database, and the repository is connected to the app.
 
-
-
 To create an Azure SQL flexible server:
 
     Log in to the Azure portal (https://portal.azure.com).
@@ -41,9 +39,10 @@ To create an Azure SQL flexible server:
     Choose the appropriate pricing tier and click "Review + create" to review your selections.
     Click "Create" to create the server.
     Once the server is created, click on the "Networing" tab and add your IP address to the firewall rules. You can do this by clicking "+ Add current client IP address".
-    Go to databases and select Add. Name the database and select Character Set: utf8mb4, Collation: utf8mb4_unicode_ci
+    Go to databases and select Add. Name the database and select:
+        Character Set: utf8mb4
+        Collation: utf8mb4_unicode_ci
     Now your server is created.
-
 
 To connect with MySQL workbench, follow the steps below:
 
@@ -54,7 +53,7 @@ To connect with MySQL workbench, follow the steps below:
     Enter {adminuser} as username and then enter your Password.
     Leave port # as 3306
     Go to the SSL tab and update the Use SSL field to Require.
-    In the SSL CA File field, enter the file location of the    DigiCertGlobalRootCA.crt.pem file.
+    In the SSL CA File field, enter the file location of the DigiCertGlobalRootCA.crt.pem file.
     Enter same password for the admin user from the Azure Server
     Click Test Connection to test the connection.
     If the connection is successful, click OK to save the connection.
@@ -78,3 +77,4 @@ To create an Azure Web App and deploy the project files to it, you can follow th
         DB_PASS using adminusername password
         DB_NAME using the database name you created earlier.
     Your Azure database is now connected to the Web App.
+
