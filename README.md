@@ -1,16 +1,24 @@
-University of Houston Library Management System
+University of Houston Database Systems (COSC 3380) with Dr. Uma Ramamurthy
 
-This project is a web-based library management system for the University of Houston Library. It was developed by Team 5 as part of the COSC 3380 course. The system allows librarians to manage library items, patrons, reservations, and orders, as well as generate reports on library usage.
+This project is a web-based point of sale management system for the University of Houston. A pizza shop was selected to demonstrate the point of sale concept. It was developed by Team 13 as part of the COSC 3380 course. 
 
 Team Members
 
-    Huu Loc Trinh
+    Daniel Garza
+    Ibtisam Amjad
+    Bryant Huynh
+    David Cooper
+    Eric Parsons
+
 
 The following technologies were used to develop this project:
 
     HTML/CSS/JavaScript
     PHP
     MySQL
+    Microsoft Azure
+    MySQLWorkbench
+    GitHub
 
 How to Run the Project
 
@@ -52,40 +60,3 @@ To create an Azure SQL flexible server and import all the dump files in the "dum
     For further information: https://learn.microsoft.com/en-us/azure/mysql/flexible-server/quickstart-create-server-portal
 
     Note: Make sure to update the database connection details in the "database.php" file to match your Azure SQL flexible server.
-Features
-
-    Employee - This role allows employees to perform their work duties. The employee view has the following functionality
-    Signing up new employees
-    Sign-in/Sign-out
-    Handling checkouts
-    Returning checkouts
-    Add new items
-    Add new Library
-    Add new item copy
-    Add new subject
-    Add new member type
-    Adding new item type
-    Delete member
-    Edit member information
-    Edit employee information
-    Edit item information
-    Search items
-    View detailed Item information
-    
-    Member - This role allows library members to take advantage of the libraries’ services. The member view has the following functionality:
-    Member sign-up
-    Sign-in/Sign-out
-    Change member information
-    Search Items
-    View item details
-    Reserve Items
-    View current/past reservations
-    Add item to cart
-    Check cart
-    Check out items
-    View current/past orders
-    View messages
-    Delete messages
-    Check late fee
-    Pay late fee
-
