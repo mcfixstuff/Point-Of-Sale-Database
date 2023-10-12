@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div>
             <label for="last_name">Last Name  </label>
-            <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
+            <input type="text" id="last_name" name="last_name" placeholder="Bob's Burgers" required>
         </div><br>
 
         <div>
