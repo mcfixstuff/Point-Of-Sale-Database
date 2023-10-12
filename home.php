@@ -22,7 +22,7 @@
     <br>
     <div>
         <label for="password">Password</label><br>
-        <input 
+        <input
             type="password" 
             id="password"
             name="password"
