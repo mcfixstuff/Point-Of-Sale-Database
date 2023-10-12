@@ -31,7 +31,7 @@
     <input type="submit" value="Login">
 
     <br>
-    <p>First time customer? <a href="/sign_up">Sign up now and start earning!</a></p>
+    <p>Not a member? <a href="/sign_up">Sign up now!</a></p>
 </form> 
 
 </body>
