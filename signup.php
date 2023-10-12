@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div><br>
 
         <div>
-            <label for="birthday_day">Birthday Day</label><br>
+            <label for="birthday_day">Birthday Day</label>
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31">
         </div><br>
 

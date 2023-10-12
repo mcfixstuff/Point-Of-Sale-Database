@@ -23,6 +23,12 @@ form {
     border-radius: 15px;
 }
 
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
 
 h1 {
     font-size: 3rem;
