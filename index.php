@@ -6,17 +6,27 @@
 </head>
 <body>
 
-<h2>Login Page</h2>
-
-<form action="validate_login.php" method="post">
+  
+  <form action="validate_login.php" method="post">
+  <h2 align="center">Login Page</h2>
   <div>
     <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username">
+    <input 
+      type="text" 
+      id="username" 
+      name="username"
+      placeholder="Enter username"
+      required>
   </div>
   <br>
   <div>
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password">
+    <input 
+      type="password" 
+      id="password"
+      name="password"
+      placeholder="Enter password"
+      required>
   </div>
   <br><br>
   <input type="submit" value="Login">
