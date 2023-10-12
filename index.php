@@ -19,7 +19,7 @@
 <form action="validate_login.php" method="post">
     <h2>Login to your POS Pizza Account</h2>
     <div>
-        <label for="username">Username</label><br>
+        <label for="username">Username  </label>
         <input 
             type="text" 
             id="username" 
@@ -29,7 +29,7 @@
     </div>
     <br>
     <div>
-        <label for="password">Password</label><br>
+        <label for="password">Password  </label>
         <input
             type="password" 
             id="password"
