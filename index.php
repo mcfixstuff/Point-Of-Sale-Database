@@ -34,7 +34,7 @@
     
     <div>
       <p>Not a member? <a href="signup.php">Sign up now!</a></p>
-      <br>
+      
       <p><a href="employee.php">Employee login</a></p>
     </div>
 </form> 
