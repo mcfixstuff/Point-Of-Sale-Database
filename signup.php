@@ -65,75 +65,75 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="" method="post">
         <h2>Create your POS Pizza Account</h2>
         <div>       
-            <label for="first_name">First Name</label><br>
+            <label for="first_name">First Name  </label>
             <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
         </div><br>
-        
+
         <div>
-            <label for="middle_initial">Middle Initial</label><br>
+            <label for="middle_initial">Middle Initial  </label>
             <input type="text" id="middle_initial" name="middle_initial" maxlength="1" placeholder="Enter middle initial">
         </div><br>
-        
+
         <div>
-            <label for="last_name">Last Name</label><br>
+            <label for="last_name">Last Name  </label>
             <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
         </div><br>
-        
+
         <div>
-            <label for="birthday_month">Birthday Month</label><br>
+            <label for="birthday_month">Birthday Month  </label>
             <input type="number" id="birthday_month" name="birthday_month" min="1" max="12">
         </div><br>
-        
+
         <div>
             <label for="birthday_day">Birthday Day</label><br>
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31">
         </div><br>
-        
+
         <div>
-            <label for="address">Address</label><br>
+            <label for="address">Address  </label>
             <input type="text" id="address" name="address" placeholder="Enter address" required>
         </div><br>
-        
+
         <div>
-            <label for="address2">Address Line 2</label><br>
+            <label for="address2">Address Line 2  </label>
             <input type="text" id="address2" name="address2" placeholder="Optional">
         </div><br>
-        
+
         <div>
-            <label for="city">City</label><br>
+            <label for="city">City  </label>
             <input type="text" id="city" name="city" placeholder="Enter city" required>
         </div><br>
-        
+
         <div>
-            <label for="state">State</label><br>
+            <label for="state">State  </label>
             <input type="text" id="state" name="state" maxlength="2" placeholder="Enter state" required>
         </div><br>
-        
+
         <div>
-            <label for="zip_code">Zip Code</label><br>
+            <label for="zip_code">Zip Code  </label>
             <input type="text" id="zip_code" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" required>
         </div><br>
-        
+
         <div>
-            <label for="phone_number">Phone Number</label><br>
+            <label for="phone_number">Phone Number  </label>
             <input type="tel" id="phone_number" name="phone_number" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div><br>
-        
+
         <div>
-            <label for="email">Email</label><br>
+            <label for="email">Email  </label>
             <input type="email" id="email" name="email" placeholder="Enter email address" required>
         </div><br>
-        
+
         <div>
-            <label for="password">Password</label><br>
+            <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
         </div><br>
-        
+
         <div>
             <input type="submit" value="Sign Up">
         </form>
         </div><br>
-        
+
 </body>
 </html>
 
