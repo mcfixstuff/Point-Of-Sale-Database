@@ -1,15 +1,17 @@
+<!-- Login page on opening web app page -->
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>POS PizzaLogin</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <form action="validate_login.php" method="post">
-    <h2>Login Page</h2>
+    <h2>Login to your POS Pizza Account</h2>
     <div>
-        <label for="username">Username:</label><br>
+        <label for="username">Username</label><br>
         <input 
             type="text" 
             id="username" 
@@ -19,7 +21,7 @@
     </div>
     <br>
     <div>
-        <label for="password">Password:</label><br>
+        <label for="password">Password</label><br>
         <input 
             type="password" 
             id="password"
@@ -27,7 +29,7 @@
             placeholder="Enter password"
             required>
     </div>
-    <br><br>
+    <br>
     <input type="submit" value="Login">
 
     <br>
