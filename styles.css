@@ -2,9 +2,11 @@
 body {
     font-family: 'Trebuchet MS', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 5%;
     /* background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280); */
     background: url('pizza.jpeg') no-repeat center center fixed; 
     background-size: cover; 
@@ -12,6 +14,15 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
 }
+
+form {
+    text-align: center;
+    width: 300px; /* Or adjust as needed */
+    background-color: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 5px;
+}
+
 
 h1 {
     font-size: 3rem;
