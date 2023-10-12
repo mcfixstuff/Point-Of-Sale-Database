@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Create your POS Pizza Account</h2>
         <div>       
             <label for="first_name">First Name  </label>
-            <input type="text" id="first_name" name="first_name" placeholder="EXAMPLE" required>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
         </div><br>
 
         <div>
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div>
             <label for="last_name">Last Name  </label>
-            <input type="text" id="last_name" name="last_name" placeholder="Bob's Burgers" required>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
         </div><br>
 
         <div>
