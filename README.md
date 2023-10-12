@@ -18,6 +18,7 @@ The following technologies were used to develop this project:
     Microsoft Azure
     MySQL Workbench
     GitHub
+    Visual Studio Code
 
 Steps to setup project:
 
