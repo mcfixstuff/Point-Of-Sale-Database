@@ -26,8 +26,8 @@
             name="username"
             placeholder="Enter username"
             required>
-    </div>
-    <br>
+    </div> <br>
+
     <div>
         <label for="password">Password  </label>
         <input
@@ -36,8 +36,8 @@
             name="password"
             placeholder="Enter password"
             required>
-    </div>
-    <br>
+    </div> <br>
+    
     <input type="submit" value="Login">
     
     <div>
