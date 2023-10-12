@@ -1,22 +1,22 @@
-<!-- Login page on opening web app page -->
+<!-- Employee page. Only validated users will be able to access this page -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>POS Pizza Login</title>
+    <title>Employee Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <form action="validate_login.php" method="post">
-    <h2>Login to your POS Pizza Account</h2>
+    <h2>Login to your Employee Account</h2>
     <div>
-        <label for="username">Username</label><br>
+        <label for="username">Employee ID</label><br>
         <input 
             type="text" 
-            id="username" 
-            name="username"
-            placeholder="Enter username"
+            id="employeeID" 
+            name="employeeID"
+            placeholder="Enter employee ID"
             required>
     </div>
     <br>
@@ -32,9 +32,6 @@
     <br>
     <input type="submit" value="Login">
 
-    <br><p>Not a member? <a href="signup.php">Sign up now!</a></p><br>
-
-    <p><a href="employee.php">Employee login</a></p>
 </form> 
 
 </body>
