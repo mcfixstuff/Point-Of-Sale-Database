@@ -54,32 +54,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Signup page for new users -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>POS Pizza Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p><?php echo $message; ?></p>
-    
     <form action="" method="post">
-        First Name: <input type="text" name="first_name" placeholder="Enter first name" required><br>
-        Middle Initial: <input type="text" name="middle_initial" maxlength="1" placeholder="Enter middle initial"><br>
-        Last Name: <input type="text" name="last_name" placeholder="Enter last name" required><br>
-        Birthday Month: <input type="number" name="birthday_month" min="1" max="12"><br>
-        Birthday Day: <input type="number" name="birthday_day" min="1" max="31"><br>
-        Address: <input type="text" name="address" required><br>
-        Address Line 2 (Optional): <input type="text" name="address2"><br>
-        City: <input type="text" name="city" required><br>
-        State: <input type="text" name="state" maxlength="2" required><br>
-        Zip Code: <input type="text" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" required><br>
-        Phone Number: <input type="text" name="phone_number" required><br>
-        Email: <input type="text" name="email" placeholder="Enter email address" required><br>
-        Password: <input type="password" name="password" placeholder="Choose a password" required>><br>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
+
+        <label for="middle_initial">Middle Initial</label>
+        <input type="text" id="middle_initial" name="middle_initial" maxlength="1" placeholder="Enter middle initial">
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
+
+        <label for="birthday_month">Birthday Month</label>
+        <input type="number" id="birthday_month" name="birthday_month" min="1" max="12">
+
+        <label for="birthday_day">Birthday Day</label>
+        <input type="number" id="birthday_day" name="birthday_day" min="1" max="31">
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter address" required>
+
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" name="address2" placeholder="Optional">
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter city" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" maxlength="2" placeholder="Enter state" required>
+
+        <label for="zip_code">Zip Code</label>
+        <input type="text" id="zip_code" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" required>
+
+        <label for="phone_number">Phone Number</label>
+        <input type="tel" id="phone_number" name="phone_number" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create password" required>
+
         <input type="submit" value="Sign Up">
     </form>
-
 </body>
 </html>
+
 
 
