@@ -1,15 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 $host = 'pospizza.mysql.database.azure.com';
 $dbname = 'pos';
 $username = 'danielgarza';
 $password = '#drgarza8';
-
-$message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
