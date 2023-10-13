@@ -20,7 +20,7 @@ The following technologies were used to develop this project:
     GitHub
     Visual Studio Code
 
-Steps to setup project:
+Steps to setup a PHP based Web App:
 
     1. Create Azure Database for MySQL flexible server
     2. Connect MySQL Workbench to Azure Database
@@ -69,25 +69,35 @@ To create an Azure Web App and deploy the project files to it, you can follow th
     Fill in the required information, such as the subscription, resource group, name of the web app, and operating system.
     Under "Publish", select "Code".
     Under "Runtime stack", select PHP (latest version).
-    Under the deployment tab, enable continous deployment, and link the GitHub repository you will use for your project. This connects the Web App to the repository. Once the web app is created, you can deploy your project files by uploading to this repository.
+    Under the deployment tab, enable continous deployment, and link the GitHub repository you will use for your project. 
+    This connects the Web App to the repository. Once the web app is created, you can deploy your project files by uploading to this repository.
     Under the networking tab, ensure "Enable public access" is on.
     After the deployment is complete, you can access the web app through its URL in the Azure portal
     Now select review and create.
-    Connect to your database. Under configuration, select "New application setting" and enter the following individually:
+
+To connect Web App to Azure Database:
+
+    Under configuration, select "New application setting" and enter the following individually:
         DB_HOST using the server name
         DB_NAME using admin username
         DB_PASS using adminusername password
         DB_NAME using the database name you created earlier.
     Your Azure database is now connected to the Web App.
 
-To give databse access to other users:
+To give database access to other users:
 
-    Have the user give you their IP address and manually input the IP under "Networking" in the Azure database. 
+    Have the user give you their IP address. Under "Networking" in the Azure database, create a new firewall rule name. 
+    Enter the IP address under Start IP address and End IP address.
     From the admin user's account in MySQL Workbench, run the command: CREATE USER 'username'@'%' IDENTIFIED BY 'password'
     Then run the command: GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'%'
-    This will create the username and password for the user.
-    Now have the user go to MySQL Workbench and enter the server name under hostname: {servername}.mysql.database.azure.com
-    Enter the username and password the admin created for the user.
-    Test connection and press OK after successfully connecting.
+    This will create the username and password for the user, and give the user access to view and edit the database in Workbench.
+    Now the user will do the following:
+        Go to mySQL Workbench and select the + sign.
+        Enter a name for the connection in the Connection name field.
+        Select Standard (TCP/IP) as the Connection Type.
+        Leave port # as 3306
+        Enter the server name under hostname: {servername}.mysql.database.azure.com
+        Enter the username and password the admin created for the user.
+        Test connection and press OK after successfully connecting.
     
     
