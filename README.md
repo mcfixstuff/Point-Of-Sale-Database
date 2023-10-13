@@ -2,6 +2,10 @@ University of Houston Database Systems (COSC 3380) with Dr. Uma Ramamurthy
 
 This project is a web-based point of sale management system for the University of Houston. A pizza shop was selected to demonstrate the point of sale concept. It was developed by Team 13 as part of the COSC 3380 course. 
 
+Web App URL
+
+    https://pospizzawebapp.azurewebsites.net/
+    
 Team Members
 
     Daniel Garza
