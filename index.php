@@ -13,7 +13,7 @@
 <head>
     <title>POS Pizza Login</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/pizza.ico" type="image/x-icon">
 </head>
 <body>
 
