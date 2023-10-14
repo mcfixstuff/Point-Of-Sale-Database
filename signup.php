@@ -180,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div><br>
 
         <div>
-            <input type="submit" value="Sign Up">
+            <input class = button type="submit" value="Sign Up">
         </form>
         </div><br>
 

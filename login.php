@@ -29,7 +29,7 @@
             required>
     </div> <br>
     
-    <input type="submit" value="Login">
+    <input class="button" type="submit" value="Login">
     
     <div>
       <p>Not a member? <a href="signup.php">Sign up now!</a></p>
