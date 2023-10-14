@@ -38,7 +38,7 @@ h1 {
 }
 
 /* Button Styling */
-button {
+.button {
     display: inline-block;
     background-color: #F67280; /* Button color */
     color: #ffffff; /* Text color */
@@ -49,17 +49,19 @@ button {
     border: none; /* Removes any default border */
     cursor: pointer; /* Changes the cursor to a hand when hovering */
     margin: 5px; /* Space around each button */
-    transition: background-color 0.3s; /* Smooth color transition on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
 }
 
 /* Hover effect */
-button:hover {
+.button:hover {
     background-color: #C06C84; /* Darkens the button color when hovered */
 }
 
 /* Active (when button is clicked) effect */
-button:active {
+.button:active {
     background-color: #6C5B7B; /* Makes the button even darker when clicked */
+    position: relative;
+    top: 1px;
 }
 
 
