@@ -25,7 +25,7 @@
             type="text" 
             id="username" 
             name="username"
-            placeholder="Enter username"
+            placeholder="Test"
             required>
     </div> <br>
 
