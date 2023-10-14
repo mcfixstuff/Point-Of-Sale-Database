@@ -20,10 +20,8 @@
 <form action="" method="post">
     <h2>Welcome to POS Pizza!</h2>
 
-    <!-- Login Button -->
     <a href="login.php" class="button">Login</a>
 
-    <!-- Sign Up Button -->
     <a href="signup.php" class="button">Sign Up</a>
     
     <div>
