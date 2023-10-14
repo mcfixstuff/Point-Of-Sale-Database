@@ -37,6 +37,32 @@ h1 {
     animation: fadeIn 3s ease-in-out;
 }
 
+/* Button Styling */
+.button {
+    display: inline-block;
+    background-color: #F67280; /* Button color */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px; /* Top/bottom and left/right padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Removes underline from link */
+    font-size: 1rem; /* Text size */
+    border: none; /* Removes any default border */
+    cursor: pointer; /* Changes the cursor to a hand when hovering */
+    margin: 5px; /* Space around each button */
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #C06C84; /* Darkens the button color when hovered */
+}
+
+/* Active (when button is clicked) effect */
+.button:active {
+    background-color: #6C5B7B; /* Makes the button even darker when clicked */
+}
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
