@@ -12,7 +12,7 @@
 <form action="validate_login.php" method="post">
     <h2>Login to your Employee Account</h2>
     <div>
-        <label for="username">Employee ID</label><br>
+        <label for="username">Employee ID  </label>
         <input 
             type="text" 
             id="employeeID" 
@@ -22,7 +22,7 @@
     </div>
     <br>
     <div>
-        <label for="password">Password</label><br>
+        <label for="password">Password  </label>
         <input 
             type="password" 
             id="password"
