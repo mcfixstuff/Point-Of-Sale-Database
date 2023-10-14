@@ -11,39 +11,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>POS Pizza Login</title>
+    <title>POS Pizza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/pizza.ico" type="image/x-icon">
 </head>
 <body>
 
-<form action="validate_login.php" method="post">
-    <h2>Login to your POS Pizza Account</h2>
-    <div>
-        <label for="username">Username  </label>
-        <input 
-            type="text" 
-            id="username" 
-            name="username"
-            placeholder="Test"
-            required>
-    </div> <br>
+<form action="" method="post">
+    <h2>Welcome to POS Pizza!</h2>
 
-    <div>
-        <label for="password">Password  </label>
-        <input
-            type="password" 
-            id="password"
-            name="password"
-            placeholder="Enter password"
-            required>
-    </div> <br>
-    
-    <input type="submit" value="Login">
+    <!-- Login Button -->
+    <a href="login.php" class="button">Login</a>
+
+    <!-- Sign Up Button -->
+    <a href="signup.php" class="button">Sign Up</a>
     
     <div>
-      <p>Not a member? <a href="signup.php">Sign up now!</a></p>
-      
       <p><a href="employee.php">Employee login</a></p>
     </div>
 </form> 
