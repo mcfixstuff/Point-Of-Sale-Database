@@ -1,12 +1,12 @@
 <!-- Login page on opening web app page -->
 
-<?php
+<!-- <?php
     // Connect to database
     $mysqli = require __DIR__ . "/database.php";
     if (!$mysqli) {
         die("Failed to connect to database: " . mysqli_connect_error());
     }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
