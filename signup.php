@@ -69,18 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="" method="post">
         <h2>Create your POS Pizza Account</h2>
         <div>       
-            <label for="first_name">First Name  </label>
-            <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
-        </div><br>
-
-        <div>
-            <label for="middle_initial">Middle Initial  </label>
-            <input type="text" id="middle_initial" name="middle_initial" maxlength="1" placeholder="Enter middle initial">
-        </div><br>
-
-        <div>
-            <label for="last_name">Last Name  </label>
-            <input type="text" id="last_name" name="last_name" placeholder="Enter first name" required>
+            <label for="first_name">Name  </label>
+            <input type="text" id="first_name" name="first_name" placeholder="First" required>
+            <label for="middle_initial"></label>
+            <input type="text" id="middle_initial" name="middle_initial" maxlength="1" placeholder="M.I.">
+            <label for="last_name"></label>
+            <input type="text" id="last_name" name="last_name" placeholder="Last" required>
         </div><br>
 
         <div>
