@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     // }
     $mysqli->close();
     header('Location: home.php');
-    exit;
+    // exit;
 
 }
 ?>
