@@ -8,7 +8,7 @@ body {
     height: 100vh;
     padding-top: 5%;
     /* background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280); */
-    background: url('throwback.png') no-repeat center center fixed; 
+    background: url('pizza.jpeg') no-repeat center center fixed; 
     background-size: cover; 
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -17,7 +17,7 @@ body {
 form {
     text-align: center;
     width: 300px; /* Or adjust as needed */
-    background-color: rgba(213, 23, 23, 0.7);
+    background-color: rgba(224, 217, 217, 0.7);
     padding: 20px;
     border-radius: 15px;
 }
