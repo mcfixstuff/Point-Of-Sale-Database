@@ -13,7 +13,7 @@
     </div>
     
 <form action="" method="post">
-    <h2>Thank you for joining POS Pizza family!</h2>
+    <h2>Thank you for joining the POS Pizza family!</h2>
     <a class="button">Order now!</a>
 </form> 
 
