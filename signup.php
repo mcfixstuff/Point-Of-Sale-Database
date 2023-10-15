@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div><br>
 
         <div>
-            <label for="address2">Address Line 2  </label>
+            <label for="address2">Address 2  </label>
             <input type="text" id="address2" name="address2" placeholder="Optional">
         </div><br>
 

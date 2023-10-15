@@ -24,11 +24,16 @@ form {
     border-radius: 15px;
 }
 
-/* label {
-    display: block;
-    margin-bottom: 10px;
-    margin-top: 20px;
-} */
+label {
+    display: inline-block;  /* Makes label behave like a block while keeping it inline */
+    margin-bottom: 8px;     /* Spacing below the label */
+    font-size: 16px;        /* Font size of the label */
+    color: #333;            /* Text color of the label */
+    font-weight: bold;      /* Makes the label text bold */
+    padding-right: 10px;    /* Padding to the right for spacing between label and an associated input, if they are side by side */
+    border-radius: 5px;
+}
+
 
 
 h1 {
