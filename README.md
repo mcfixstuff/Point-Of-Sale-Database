@@ -58,8 +58,8 @@ To connect with MySQL workbench:
     Enter {servername}.mysql.database.azure.com in the hostname field.
     Enter {adminuser} as username and then enter your Password.
     Leave port # as 3306
-    Go to the SSL tab and update the Use SSL field to Require.
-    If you do not have the proper certificate, you will need to the following steps before continuing: 
+    Go to the SSL tab and update the "Use SSL" field to Require.
+    You will need to download the proper certificate authority before continuing: 
         Go to DigiCert's official Root Certificates page: https://www.digicert.com/kb/digicert-root-certificates.htm
         Find the "DigiCert Global Root CA" certificate.
         Download the PEM version.
@@ -69,7 +69,6 @@ To connect with MySQL workbench:
     Click Test Connection to test the connection.
     If the connection is successful, click OK to save the connection.
     Your Azure database is now connected to Workbench.
-
 
 To create an Azure Web App and deploy the project files to it:
 
