@@ -6,6 +6,12 @@
     <link rel="icon" href="/pizza.ico" type="image/x-icon">
 </head>
 <body>
+    
+    <div class="navbar">
+        <a href="index.php">Home</a>
+        <!-- <a href="#">Order Now</a>
+        <a href="#">Profile</a> -->
+    </div>  
 
 <form action="validate_login.php" method="post">
     <h2>Login to your POS Pizza Account</h2>

@@ -9,13 +9,6 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="navbar">
-    <a href="index.php">Home</a>
-    <!-- <a href="#">Order Now</a>
-    <a href="#">Profile</a> -->
-</div>
-
 <form action="" method="post">
     <h2>Welcome to POS Pizza!</h2>
 

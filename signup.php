@@ -61,6 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="/pizza.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.php">Home</a>
+        <!-- <a href="#">Order Now</a>
+        <a href="#">Profile</a> -->
+    </div>
     <form action="" method="post">
         <h2>Create your POS Pizza Account</h2>
         <div>       
