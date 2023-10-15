@@ -59,7 +59,12 @@ To connect with MySQL workbench, follow the steps below:
     Enter {adminuser} as username and then enter your Password.
     Leave port # as 3306
     Go to the SSL tab and update the Use SSL field to Require.
+    If you do not have proper certificate, you will need to the following steps before continuing: 
+        Go to DigiCert's official Root Certificates page: https://www.digicert.com/kb/digicert-root-certificates.htm
+        Find the "DigiCert Global Root CA" certificate.
+        Download the PEM version.
     In the SSL CA File field, enter the file location of the DigiCertGlobalRootCA.crt.pem file.
+    Additionally, place the certificate in your Github repository.
     Enter same password for the admin user from the Azure Server
     Click Test Connection to test the connection.
     If the connection is successful, click OK to save the connection.
