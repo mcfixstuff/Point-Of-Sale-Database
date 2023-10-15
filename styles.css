@@ -27,7 +27,7 @@ form {
 label {
     font-family: 'Trebuchet MS', sans-serif;
     display: inline-block;  /* Makes label behave like a block while keeping it inline */
-    margin-bottom: 8px;     /* Spacing below the label */
+    margin-bottom: 6px;     /* Spacing below the label */
     font-size: 16px;        /* Font size of the label */
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -105,7 +105,7 @@ select {
     margin-bottom: 5px; /* Spacing between each field */
     border: 1px solid #e0e0e0; /* Border color */
     border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    font-size: 14px; /* Font size */
     background-color: #fff; /* White background */
     transition: border-color 0.3s; /* Smooth transition for border color */
     outline: none; /* Remove the browser's default outline */
