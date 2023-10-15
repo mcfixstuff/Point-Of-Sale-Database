@@ -16,12 +16,12 @@
 <form action="valid_login.php" method="post">
     <h2>Login to your POS Pizza Account</h2>
     <div>
-        <label for="username">Username  </label>
+        <label for="username">Email address  </label>
         <input 
             type="text" 
-            id="username" 
-            name="username"
-            placeholder="Enter username"
+            id="email" 
+            name="email"
+            placeholder="Enter email"
             required>
     </div> <br>
 
