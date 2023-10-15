@@ -157,12 +157,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div>
             <label for="zip_code">Zip Code  </label>
-            <input type="text" id="zip_code" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" required>
+            <input type="text" id="zip_code" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" style="width: 70px;" required>
         </div><br>
 
         <div>
             <label for="phone_number">Phone Number  </label>
-            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter 10 digits" pattern="[0-9]{9}" required>
+            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter 10 digits" pattern="[0-9]{9}" style="width: 70px;" required>
         </div><br>
 
         <div>
