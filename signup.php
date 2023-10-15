@@ -153,9 +153,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
         </select>
-        </div><br>
-
-        <div>
             <label for="zip_code">Zip Code  </label>
             <input type="text" id="zip_code" name="zip_code" placeholder="Enter Zip Code" pattern="\d{5}(-\d{4})?" style="width: 125px;" required>
         </div><br>
