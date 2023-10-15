@@ -66,8 +66,12 @@ h1 {
 
 /* Navbar Styling */
 .navbar {
-    background-color: #333;
+    background-color: rgba(224, 217, 217, 0.7);
     overflow: hidden;
+    position: fixed;  /* This ensures the navbar is always at the top */
+    top: 0;           /* Aligns the navbar to the top */
+    width: 100%;      /* Ensures the navbar stretches the full width of the page */
+    z-index: 1000;    /* Keeps the navbar above other elements */
 }
 
 .navbar a {
