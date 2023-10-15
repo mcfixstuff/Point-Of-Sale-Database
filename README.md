@@ -43,14 +43,14 @@ To create an Azure SQL flexible server:
     Fill out the required information, such as server name, admin username and password, and location. This will be needed when connecting to Workbench.
     Choose the appropriate pricing tier and click "Review + create" to review your selections.
     Click "Create" to create the server.
-    Once the server is created, click on the "Networing" tab and add your IP address to the firewall rules. You can do this by clicking "+ Add current client IP address".
+    Once the server is created, click on the "Networking" tab and add your IP address to the firewall rules. You can do this by clicking "+ Add current client IP address".
     You will need to update your IP address anytime you access the database from a new IP.
     Go to databases and select Add. Name the database and select:
         Character Set: utf8mb4
         Collation: utf8mb4_unicode_ci
     Now your server is created.
 
-To connect with MySQL workbench, follow the steps below:
+To connect with MySQL workbench:
 
     Click the + symbol in the MySQL Connections tab to add a new connection.
     Enter a name for the connection in the Connection name field.
@@ -71,7 +71,7 @@ To connect with MySQL workbench, follow the steps below:
     Your Azure database is now connected to Workbench.
 
 
-To create an Azure Web App and deploy the project files to it, you can follow these steps:
+To create an Azure Web App and deploy the project files to it:
 
     Log in to the Azure portal (https://portal.azure.com/).
     Click on "Create a resource" button in the left menu, then select "Web App".
