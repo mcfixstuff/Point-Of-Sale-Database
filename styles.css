@@ -10,14 +10,14 @@ body {
     /* background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280); */
     background: url('rustic.webp') no-repeat center center fixed; 
     background-size: cover; 
-    color: #ffffff6a;
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 form {
     text-align: center;
     width: 300px; /* Or adjust as needed */
-    background-color: rgba(224, 217, 217, 0.7);
+    background-color: rgba(224, 217, 217, 0.307);
     padding: 20px;
     border-radius: 15px;
 }
@@ -63,7 +63,6 @@ h1 {
     position: relative;
     top: 1px;
 }
-
 
 
 @keyframes fadeIn {
