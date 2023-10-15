@@ -112,7 +112,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
             die("Connection error: " . $mysqli->connect_error);
         }
 
-2. Create a index.php file in GitHub repository. This will be the default web page when you deploy your web app. For this example, it will be a basic a page to create an account. Paste the following:
+3. Create an index.php file in GitHub repository. This will be the default web page when you deploy your web app. For this example, it will be a basic page to create an account. Paste the following:
 
         <!DOCTYPE html>
         <head>
@@ -162,7 +162,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
             <body>
                 <div class="account-container">
                     <h2>Create Account</h2>
-                    <form action="valid_test.php" method="post">
+                    <form action="valid_signup.php" method="post">
                         <input type="text" name="username" placeholder="Username" class="account-input" required>
                         <input type="password" name="password" placeholder="Password" class="account-input" required>
                         <button type="submit" class="account-button">Sign up now</button>
@@ -172,7 +172,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
         </html>
 
 
-3. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
+4. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
 
         <?php
         include 'database.php';
@@ -193,7 +193,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
             if ($mysqli->query($sql) === TRUE) {
                 $mysqli->close();
                 // If successful, redirect to specfied page
-                header('Location: welcome.php');
+                header('Location: index.php');
                 exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $mysqli->error;
@@ -202,7 +202,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
         }
         ?>
 
-4. Ensure your data was entered into the database. Enter the following command in mySQL Workbench to see your data:
+5. Ensure your data was entered into the database. Enter the following command in mySQL Workbench to see your data:
 
     SELECT * FROM USERS;
 
