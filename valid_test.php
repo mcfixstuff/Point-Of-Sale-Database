@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Extracting data from the form
-    $username = $mysqli->real_escape_string($_POST['email']);
+    $username = $mysqli->real_escape_string($_POST['username']);
     $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
     // Inserting the data into the database
