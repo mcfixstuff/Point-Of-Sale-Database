@@ -1,35 +1,27 @@
 <?php
 include 'database.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $mysqli->real_escape_string($_POST['username']);
-    $password = $_POST['password'];
 
-    // Access users tables
-    $result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
+    // Extracting data from the form
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        
-        if (password_verify($password, $user['password'])) {
-            // Successful login
-            session_start();
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $user['username'];
-            // Redirect to a logged-in page or dashboard
-            header("Location: welcome.php");
-        } else {
-            // Password doesn't match
-            session_start();
-            $_SESSION['error'] = "Incorrect password!";
-            header("Location: test.php"); 
-        }
+    // Inserting the data into the database
+    $sql = "INSERT INTO customers (username, password) 
+            VALUES ('$username', '$password')";
+
+    if ($mysqli->query($sql) === TRUE) {
+        $mysqli->close();
+        // If successful, redirect to specfied page
+        header('Location: welcome.php');
+        exit;
     } else {
-        // User doesn't exist
-        session_start();
-        $_SESSION['error'] = "Email not found";
-        header("Location: test.php"); 
+        echo "Error: " . $sql . "<br>" . $mysqli->error;
     }
+
 }
 ?>
-

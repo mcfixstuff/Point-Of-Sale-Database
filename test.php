@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Login Page</title>
+    <title>Welcome</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             height: 100vh;
         }
 
-        .login-container {
+        .account-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
@@ -19,20 +19,20 @@
             width: 300px;
         }
 
-        .login-container h2 {
+        .account-container h2 {
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .login-input {
-            width: 75%;
+        .account-input {
+            width: 90%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        .login-button {
+        .account-button {
             width: 100%;
             padding: 10px;
             border: none;
@@ -44,12 +44,12 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="account-container">
+        <h2>Create Account</h2>
         <form action="valid_test.php" method="post">
-            <input type="text" name="username" placeholder="Username" class="login-input" required>
-            <input type="password" name="password" placeholder="Password" class="login-input" required>
-            <button type="submit" class="login-button">Login</button>
+            <input type="text" name="username" placeholder="Username" class="account-input" required>
+            <input type="password" name="password" placeholder="Password" class="account-input" required>
+            <button type="submit" class="account-button">Sign up now</button>
         </form>
     </div>
 </body>
