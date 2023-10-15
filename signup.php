@@ -1,6 +1,5 @@
-include 'database.php';
-
 <?php
+include 'database.php';
 $host = 'pospizza.mysql.database.azure.com';
 $dbname = 'pos';
 $username = 'danielgarza';
