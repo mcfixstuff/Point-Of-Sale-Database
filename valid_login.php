@@ -1,30 +1,31 @@
 <?php
-$servername = "pospizza.mysql.database.azure.com";
-$username = "danielgarza";
-$password = "#drgarza8";
-$database = "pos";
+include 'database.php';  // Assuming you have a database.php to handle your database connection
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $mysqli->real_escape_string($_POST['username']);
+    $password = $_POST['password'];  // Don't escape this, you'll hash it
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    $result = $mysqli->query("SELECT * FROM customers WHERE username='$username'");
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$sql = "SELECT id FROM users WHERE username = '$username' AND password = '$password'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Successful login
-    echo "Logged in successfully!";
-    // You can also redirect the user to another page, for example:
-    // header("Location: dashboard.php");
-} else {
-    echo "Invalid username or password.";
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        
+        if (password_verify($password, $user['password'])) {
+            // Successful login
+            // Start a session and set session variables, or do whatever you want upon a successful login
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $user['username'];
+            // Redirect to a logged-in page or dashboard
+            header("Location: home.php");
+        } else {
+            // Password doesn't match
+            echo "Incorrect password!";
+        }
+    } else {
+        // User doesn't exist
+        echo "User does not exist!";
+    }
 }
-$conn->close();
 ?>
+
