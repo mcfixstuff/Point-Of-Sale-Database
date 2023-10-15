@@ -7,11 +7,6 @@
     <link rel="icon" href="img/pizza.ico" type="image/x-icon">
 </head>
 <body>
-    <?php
-        if (isset($_SESSION['first_name'])) {
-            echo "Hello " . $_SESSION['first_name'] . ", welcome back!";
-        }
-    ?>
     <div class="navbar">
         <a href="index.php">Home</a>
         <!-- <a href="#">Order Now</a>

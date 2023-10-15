@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: home.php");
         } else {
             // Password doesn't match
-            echo "Incorrect password!";
+            $_SESSION['error'] = "Incorrect password!";
         }
     } else {
         // User doesn't exist
