@@ -187,7 +187,7 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
             $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
             // Inserting the data into the database
-            $sql = "INSERT INTO customers (username, password) 
+            $sql = "INSERT INTO users (username, password) 
                     VALUES ('$username', '$password')";
 
             if ($mysqli->query($sql) === TRUE) {
