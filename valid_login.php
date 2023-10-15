@@ -20,11 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: home.php");
         } else {
             // Password doesn't match
+            session_start();
             $_SESSION['error'] = "Incorrect password!";
+            header("Location: login.php");
         }
     } else {
         // User doesn't exist
-        echo "User does not exist!";
+        session_start();
+        $_SESSION['error'] = "Email not found";
+        header("Location: login.php");
     }
 }
 ?>
