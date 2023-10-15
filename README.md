@@ -114,7 +114,15 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
 
 2. Create a index.php file in GitHub repository and paste the following:
 
-    
+3. Create a valid_login.php file in GitHub repository and paste the following:
+
+
+
+4. Ensure your data was entered into the database. Enter the following command in mySQL Workbench to see your data:
+
+    SELECT * FROM USERS;
+
+
  
 
 
