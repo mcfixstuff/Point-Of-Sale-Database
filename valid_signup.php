@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     if ($mysqli->query($sql) === TRUE) {
         // echo "Account created successfully!";
         $mysqli->close();
-        header('Location: home.php');
+        header('Location: welcome.php');
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $mysqli->error;
