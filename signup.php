@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div>
             <label for="state">State  </label>
-            <select id="state" name="state" placeholder="Select state" style="width: 75px;"required>
+            <select id="state" name="state" placeholder="Select state" style="width: 100px;"required>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
