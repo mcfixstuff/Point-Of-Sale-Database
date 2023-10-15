@@ -1,6 +1,6 @@
 University of Houston Database Systems (COSC 3380) with Dr. Uma Ramamurthy
 
-This project is a web-based point of sale management system for the University of Houston. A pizza shop was selected to demonstrate the point of sale concept. It was developed by Team 13 as part of the COSC 3380 course. 
+This project is a web-based point-of-sale management system for the University of Houston. A pizza shop was selected to demonstrate the point-of-sale concept. It was developed by Team 13 as part of the COSC 3380 course. 
 
 Web App URL
 
@@ -24,12 +24,12 @@ The following technologies were used to develop this project:
     GitHub
     Visual Studio Code
 
-Steps to setup a PHP based Web App:
+Steps to set up a PHP-based Web App:
 
     1. Create Azure Database for MySQL flexible server
     2. Connect MySQL Workbench to Azure Database
     3. Create Azure Web App
-    4. Setup continous deployment from Github repository to Web App
+    4. Setup continuous deployment from the Github repository to the Web App
     5. Connect Web App to Azure Database
      Now Workbench is connected to the database, the app is connected to the database, and the repository is connected to the app.
 
@@ -55,17 +55,17 @@ To connect with MySQL workbench:
     Click the + symbol in the MySQL Connections tab to add a new connection.
     Enter a name for the connection in the Connection name field.
     Select Standard (TCP/IP) as the Connection Type.
-    Enter {servername}.mysql.database.azure.com in hostname field.
+    Enter {servername}.mysql.database.azure.com in the hostname field.
     Enter {adminuser} as username and then enter your Password.
     Leave port # as 3306
     Go to the SSL tab and update the Use SSL field to Require.
-    If you do not have proper certificate, you will need to the following steps before continuing: 
+    If you do not have the proper certificate, you will need to the following steps before continuing: 
         Go to DigiCert's official Root Certificates page: https://www.digicert.com/kb/digicert-root-certificates.htm
         Find the "DigiCert Global Root CA" certificate.
         Download the PEM version.
     In the SSL CA File field, enter the file location of the DigiCertGlobalRootCA.crt.pem file.
-    Additionally, place the certificate in your Github repository.
-    Enter same password for the admin user from the Azure Server
+    Additionally, place the certificate in your GitHub repository.
+    Enter the same password for the admin user from the Azure Server
     Click Test Connection to test the connection.
     If the connection is successful, click OK to save the connection.
     Your Azure database is now connected to Workbench.
@@ -89,21 +89,21 @@ To connect Web App to Azure Database:
     Under configuration, select "New application setting" and enter the following individually:
         DB_HOST using the server name
         DB_NAME using admin username
-        DB_PASS using adminusername password
+        DB_PASS using the admin's password
         DB_NAME using the database name you created earlier.
     Your Azure database is now connected to the Web App.
 
 
-The next steps will show how to store user input from your web page into your database. In this example we will have the user sign up with a username and password and store the data.
+The next steps will show how to store user input from your web page into your database. In this example, we will have the user sign up with a username and password and store the data.
 
-1. In mySQL Workbench, create a table titled "users" by running the following SQL command:
+1. In MySQL Workbench, create a table titled "users" by running the following SQL command:
 
         CREATE TABLE users (
             username VARCHAR(255) NOT NULL UNIQUE,
             password VARCHAR(255) NOT NULL
         );
 
-2. Create a database.php file in GitHub repository and paste the following:
+2. Create a database.php file in the GitHub repository and paste the following:
 
         <?php
         $host = "{servername}.mysql.database.azure.com";
@@ -167,6 +167,7 @@ The next steps will show how to store user input from your web page into your da
             <body>
                 <div class="account-container">
                     <h2>Create Account</h2>
+                    // This will run valid_signup.php when you press submit
                     <form action="valid_signup.php" method="post">
                         <input type="text" name="username" placeholder="Username" class="account-input" required>
                         <input type="password" name="password" placeholder="Password" class="account-input" required>
@@ -177,7 +178,7 @@ The next steps will show how to store user input from your web page into your da
         </html>
 
 
-4. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
+5. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
 
         <?php
         include 'database.php';
@@ -197,7 +198,7 @@ The next steps will show how to store user input from your web page into your da
 
             if ($mysqli->query($sql) === TRUE) {
                 $mysqli->close();
-                // If successful, redirect to specfied page
+                // If successful, redirect to a specified page
                 header('Location: index.php');
                 exit;
             } else {
@@ -207,19 +208,19 @@ The next steps will show how to store user input from your web page into your da
         }
         ?>
 
-5. Ensure your data was entered into the database. Enter the following command in mySQL Workbench to see your data:
+6. Ensure your data was entered into the database. Enter the following command in MySQL Workbench to see your data:
 
         SELECT * FROM USERS;
    
 To give database access to other users:
 
     Have the user give you their IP address. Under "Networking" in the Azure database, create a new firewall rule name. 
-    Enter the IP address under Start IP address and End IP address.
+    Enter the IP address under the Start IP address and End IP address.
     From the admin user's account in MySQL Workbench, run the command: CREATE USER 'username'@'%' IDENTIFIED BY 'password'
     Then run the command: GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'%'
     This will create the username and password for the user, and give the user access to view and edit the database in Workbench.
     Now the user will do the following:
-        Go to mySQL Workbench and select the + sign.
+        Go to MySQL Workbench and select the + sign.
         Enter a name for the connection in the Connection name field.
         Select Standard (TCP/IP) as the Connection Type.
         Leave port # as 3306
