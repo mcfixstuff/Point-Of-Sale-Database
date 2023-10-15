@@ -25,7 +25,7 @@
         }
 
         .account-input {
-            width: 90%;
+            width: 95%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;

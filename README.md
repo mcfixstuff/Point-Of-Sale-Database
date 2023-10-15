@@ -112,10 +112,37 @@ The next steps will show how to create a table in mySQL Workbench and a PHP file
         die("Connection error: " . $mysqli->connect_error);
     }
 
-2. Create a index.php file in GitHub repository and paste the following:
+2. Create a index.php file in GitHub repository. This will be the default web page when you deploy your web app. For this example, it will be a basic a page to create an account. Paste the following:
 
-3. Create a valid_login.php file in GitHub repository and paste the following:
+3. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
 
+    <?php
+    include 'database.php';
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Extracting data from the form
+        $username = $mysqli->real_escape_string($_POST['email']);
+        $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
+
+        // Inserting the data into the database
+        $sql = "INSERT INTO customers (username, password) 
+                VALUES ('$username', '$password')";
+
+        if ($mysqli->query($sql) === TRUE) {
+            $mysqli->close();
+            // If successful, redirect to specfied page
+            header('Location: welcome.php');
+            exit;
+        } else {
+            echo "Error: " . $sql . "<br>" . $mysqli->error;
+        }
+
+    }
+    ?>
 
 
 4. Ensure your data was entered into the database. Enter the following command in mySQL Workbench to see your data:
