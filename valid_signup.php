@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday_month, birthday_day, address, address2, city, state, zip_code, phone_number, email, password) 
             VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday_month', '$birthday_day', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
 
-    // if ($mysqli->query($sql) === TRUE) {
-    //     echo "Account created successfully!";
-    // } else {
-    //     echo "Error: " . $sql . "<br>" . $mysqli->error;
-    // }
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Account created successfully!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $mysqli->error;
+    }
     $mysqli->close();
     header('Location: home.php');
     // exit;
