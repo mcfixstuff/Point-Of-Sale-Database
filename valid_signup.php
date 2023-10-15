@@ -25,39 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday_month, birthday_day, address, address2, city, state, zip_code, phone_number, email, password) 
             VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday_month', '$birthday_day', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
 
-    if ($mysqli->query($sql) === TRUE) {
-        echo "Account created successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $mysqli->error;
-    }
+    // if ($mysqli->query($sql) === TRUE) {
+    //     echo "Account created successfully!";
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . $mysqli->error;
+    // }
     $mysqli->close();
-    // header('Location: home.php');
-    // exit;
+    header('Location: home.php');
+    exit;
 
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>POS Pizza</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/pizza.ico" type="image/x-icon">
-</head>
-<body>
-    <div class="navbar">
-        <a href="index.php">Home</a>
-        <!-- <a href="#">Order Now</a>
-        <a href="#">Profile</a> -->
-    </div>
-    
-<form action="" method="post">
-    <h2>Thank you for joining POS Pizza family!</h2>
-
-    <a class="button">Order now!</a>
-    
-    </div>
-</form> 
-
-</body>
-</html>
