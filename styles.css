@@ -25,13 +25,13 @@ form {
 }
 
 label {
+    font-family: 'Trebuchet MS', sans-serif;
     display: inline-block;  /* Makes label behave like a block while keeping it inline */
     margin-bottom: 8px;     /* Spacing below the label */
     font-size: 16px;        /* Font size of the label */
-    color: #333;            /* Text color of the label */
-    font-weight: bold;      /* Makes the label text bold */
-    padding-right: 10px;    /* Padding to the right for spacing between label and an associated input, if they are side by side */
-    border-radius: 5px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-right: 3px;    /* Padding to the right for spacing between label and an associated input, if they are side by side */
 }
 
 
