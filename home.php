@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,23 +11,19 @@
 <body>
     <div class="navbar">
         <a href="index.php">Home</a>
-        <!-- <a href="#">Order Now</a>
-        <a href="#">Profile</a> -->
     </div>
 
-    <?php 
-    // Ensure you start session at the top of your PHP script or page
-    session_start(); 
-
-    // Check if the first_name is set in the session (or retrieve it from your database if needed)
-    if (isset($_SESSION['first_name'])) {
-        echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
+    <?php
+    if(isset($_SESSION['first_name']) && !empty($_SESSION['first_name'])){
+        echo "<h2>Welcome back, " . htmlspecialchars($_SESSION['first_name']) . "!</h2>";
     } else {
-        echo "<h2>Thank you so much for joining POS Pizza family!</h2>";
+        echo "<h2>Thank you for joining POS Pizza family!</h2>";
     }
     ?>
 
-    <a class="button">Order now!</a>
+    <form action="" method="post">
+        <a class="button">Order now!</a>
+    </form> 
 
 </body>
 </html>
