@@ -35,7 +35,6 @@
             required>
     </div> <br>
     
-    <div id="errorMessage" style="color: red;"></div> <!-- This will display our error -->
     <input class="button" type="submit" value="Login">
     
     <div>

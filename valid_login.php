@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $user['email'];
             // Redirect to a logged-in page or dashboard
-            header("Location: home.php");
+            header("Location: test.php");
         } else {
             // Password doesn't match
             // echo "<h2>Incorrect password</h2>";
