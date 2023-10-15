@@ -13,7 +13,7 @@
         <a href="#">Profile</a> -->
     </div>  
 
-<form action="validate_login.php" method="post">
+<form action="valid_login.php" method="post">
     <h2>Login to your POS Pizza Account</h2>
     <div>
         <label for="username">Username  </label>
