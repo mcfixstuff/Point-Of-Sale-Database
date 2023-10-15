@@ -1,19 +1,11 @@
 <!-- Login page on opening web app page -->
 
-<!-- <?php
-    // Connect to database
-    $mysqli = require __DIR__ . "/database.php";
-    if (!$mysqli) {
-        die("Failed to connect to database: " . mysqli_connect_error());
-    }
-?> -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>POS Pizza</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pizza.ico" type="image/x-icon">
+    <link rel="icon" href="/pizza.ico" type="image/x-icon">
 </head>
 <body>
 
