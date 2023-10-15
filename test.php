@@ -20,12 +20,13 @@
         }
 
         .login-container h2 {
-            text-align: center;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .login-input {
-            width: 150px;
+            text-align: center;
+            width: auto;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
