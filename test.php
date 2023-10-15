@@ -25,8 +25,7 @@
         }
 
         .login-input {
-            text-align: center;
-            width: auto;
+            width: 75%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -47,7 +46,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="your_server_script.php" method="post">
+        <form action="valid_test.php" method="post">
             <input type="text" name="username" placeholder="Username" class="login-input" required>
             <input type="password" name="password" placeholder="Password" class="login-input" required>
             <button type="submit" class="login-button">Login</button>
