@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
         body {
@@ -28,7 +25,7 @@
         }
 
         .login-input {
-            width: 100%;
+            width: auto;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -43,10 +40,6 @@
             background-color: #333;
             color: #fff;
             cursor: pointer;
-        }
-
-        .login-button:hover {
-            background-color: #555;
         }
     </style>
 </head>
