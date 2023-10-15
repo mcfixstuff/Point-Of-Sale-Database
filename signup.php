@@ -1,3 +1,5 @@
+include 'database.php';
+
 <?php
 $host = 'pospizza.mysql.database.azure.com';
 $dbname = 'pos';
