@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +14,7 @@
     
 <form action="" method="post">
     <h2>Thank you for joining POS Pizza family!</h2>
-
     <a class="button">Order now!</a>
-    
-    </div>
 </form> 
 
 </body>

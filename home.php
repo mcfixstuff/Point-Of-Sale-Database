@@ -21,7 +21,7 @@ session_start();
     if (isset($_SESSION['first_name'])) {
         echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
     } else {
-        echo "<h2>Thank you for joining POS Pizza family!</h2>";
+        echo "<h2>Welcome back to POS Pizza!</h2>";
     }
     ?>
 
