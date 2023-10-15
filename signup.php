@@ -80,12 +80,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div>
             <label for="birthday_month">Birthday Month  </label>
-            <input type="number" id="birthday_month" name="birthday_month" min="1" max="12" placeholder="1-12">
+            <input type="number" id="birthday_month" name="birthday_month" min="1" max="12" placeholder="1-12" style="width: 200px;">
         </div><br>
 
         <div>
             <label for="birthday_day">Birthday Day  </label>
-            <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholer = "1-31">
+            <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholer = "1-31" style="width: 200px;">
         </div><br>
 
         <div>
