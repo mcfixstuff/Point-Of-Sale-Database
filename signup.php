@@ -30,6 +30,17 @@
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholder = "Day" style="width: 60px;">
         </div><br>
 
+        <script>
+            // JavaScript to get today's date
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+
+            // Set placeholders to today's date
+            document.getElementById('birthday_month').placeholder = mm;
+            document.getElementById('birthday_day').placeholder = dd;
+         </script>
+
         <div>
             <label for="address">Address  </label>
             <input type="text" id="address" name="address" placeholder="Enter address" required>
