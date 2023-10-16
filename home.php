@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
     session_start();
     // Check if the user is not logged in
     if (!isset($_SESSION['first_name'])) {
@@ -6,7 +6,7 @@
         header('Location: login.php');
         exit(); // stop the further execution of the script
     } 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
