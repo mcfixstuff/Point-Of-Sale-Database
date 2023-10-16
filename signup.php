@@ -30,18 +30,30 @@
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholder = "Day" style="width: 50px;">
             <label for="birthday_year"></label>
             <input type="number" id="birthday_year" name="birthday_year" pattern="[0-9]{4}" placeholder = "Year" style="width: 50px;">
-        </div><br>
+
+            <!-- Hidden input to hold the concatenated date -->
+            <input type="hidden" id="birthday" name="birthday">
+        </div>
 
         <script>
-            // JavaScript to get today's date
-            let today = new Date();
-            let dd = String(today.getDate()).padStart(2, '0');
-            let mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+            function formatDate() {
+                var day = document.getElementById('birthday_day').value;
+                var month = document.getElementById('birthday_month').value;
+                var year = document.getElementById('birthday_year').value;
 
-            // Set placeholders to today's date
-            document.getElementById('birthday_month').placeholder = mm;
-            document.getElementById('birthday_day').placeholder = dd;
-         </script>
+                // Ensure all values are filled
+                if (day && month && year) {
+                    var formatted = year + '/' + month.padStart(2, '0') + '/' + day.padStart(2, '0');
+                    document.getElementById('birthday').value = formatted;
+                    
+                    // If you're using a form, you'd typically submit it here
+                    // document.getElementById('yourFormId').submit();
+                } else {
+                    alert("Please fill all date fields");
+                }
+            }
+        </script>
+
 
         <div>
             <label for="address">Address  </label>
@@ -132,7 +144,7 @@
         </div><br>
 
         <div>
-            <input class = button type="submit" value="Sign Up">
+            <input class = button type="submit" value="Sign Up" onclick="formatDate()">
         </form>
 </body>
 </html>
