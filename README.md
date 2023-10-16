@@ -95,106 +95,106 @@ To connect Web App to Azure Database:
 
 The next steps will show how to store user input from your web page into your database. In this example, we will have the user sign up with a username and password and store the data.
 
-1. In MySQL Workbench, create a table titled "users" by running the following SQL command:
+In MySQL Workbench, create a table titled "users" by running the following SQL command:
 
-        CREATE TABLE users (
-            username VARCHAR(255) NOT NULL UNIQUE,
-            password VARCHAR(255) NOT NULL
-        );
+    CREATE TABLE users (
+        username VARCHAR(255) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL    
+    );
 
-2. Create a database.php file in the GitHub repository and paste the following:
+Create a database.php file in the GitHub repository and paste the following:
 
-        <?php
-        $host = "{servername}.mysql.database.azure.com";
-        $dbname = "{database name}";
-        $username = "{admin user}";
-        $password = "{admin user password}";
-        $port = 3306;
-        $mysqli = mysqli_init();
-        mysqli_ssl_set($mysqli, NULL, NULL, "./DigiCertGlobalRootCA.crt.pem", NULL, NULL);
-        if (!$mysqli->real_connect($host, $username, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL)) {
-            die("Connection error: " . $mysqli->connect_error);
+    <?php
+    $host = "{servername}.mysql.database.azure.com";
+    $dbname = "{database name}";
+    $username = "{admin user}";
+    $password = "{admin user password}";
+    $port = 3306;
+    $mysqli = mysqli_init();
+    mysqli_ssl_set($mysqli, NULL, NULL, "./DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    if (!$mysqli->real_connect($host, $username, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL)) {
+        die("Connection error: " . $mysqli->connect_error);
+    }
+
+Create an index.php file in GitHub repository. This will be the default web page when you deploy your web app. For this example, it will be a basic page to create an account. Paste the following:
+
+    <!DOCTYPE html>
+    <head>
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-3. Create an index.php file in GitHub repository. This will be the default web page when you deploy your web app. For this example, it will be a basic page to create an account. Paste the following:
+        .account-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
 
-        <!DOCTYPE html>
-            <head>
-            <title>Welcome</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: #f4f4f4;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100vh;
-                    }
+        .account-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-                    .account-container {
-                        background-color: #fff;
-                        padding: 20px;
-                        border-radius: 5px;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                        width: 300px;
-                    }
+        .account-input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-                    .account-container h2 {
-                        margin-bottom: 20px;
-                        text-align: center;
-                    }
-
-                    .account-input {
-                        width: 95%;
-                        padding: 10px;
-                        margin: 10px 0;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                    }
-
-                    .account-button {
-                        width: 100%;
-                        padding: 10px;
-                        border: none;
-                        border-radius: 5px;
-                        background-color: #333;
-                        color: #fff;
-                        cursor: pointer;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="account-container">
-                    <h2>Create Account</h2>
-                    // This will run valid_signup.php when you press submit
-                    <form action="valid_signup.php" method="post">
-                        <input type="text" name="username" placeholder="Username" class="account-input" required>
-                        <input type="password" name="password" placeholder="Password" class="account-input" required>
-                        <button type="submit" class="account-button">Sign up now</button>
-                    </form>
-                </div>
-            </body>
-        </html>
+        .account-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="account-container">
+            <h2>Create Account</h2>
+            <!-- This will run valid_signup.php when you press submit -->
+            <form action="valid_signup.php" method="post">
+                <input type="text" name="username" placeholder="Username" class="account-input" required>
+                <input type="password" name="password" placeholder="Password" class="account-input" required>
+                <button type="submit" class="account-button">Sign up now</button>
+            </form>
+        </div>
+    </body>
+    </html>
 
 
-5. Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
+Create a valid_signup.php file in GitHub repository. This is the SQL code that will send the input to your database. Paste the following:
 
-        <?php
+    <?php
         include 'database.php';
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
-
+        
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+        
             // Extracting data from the form
             $username = $mysqli->real_escape_string($_POST['username']);
             $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
-
+        
             // Inserting the data into the database
             $sql = "INSERT INTO users (username, password) 
                     VALUES ('$username', '$password')";
-
+        
             if ($mysqli->query($sql) === TRUE) {
                 $mysqli->close();
                 // If successful, redirect to a specified page
@@ -203,13 +203,13 @@ The next steps will show how to store user input from your web page into your da
             } else {
                 echo "Error: " . $sql . "<br>" . $mysqli->error;
             }
-
+        
         }
-        ?>
+    ?>
 
-6. Ensure your data was entered into the database. Enter the following command in MySQL Workbench to see your data:
+Ensure your data was entered into the database. Enter the following command in MySQL Workbench to see your data:
 
-        SELECT * FROM USERS;
+    SELECT * FROM USERS;
    
 To give database access to other users:
 
