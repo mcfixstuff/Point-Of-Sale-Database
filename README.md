@@ -48,6 +48,7 @@ To create an Azure SQL flexible server:
     Go to databases and select Add. Name the database and select:
         Character Set: utf8mb4
         Collation: utf8mb4_unicode_ci
+    Go to "Overview" and take note of your Server Name. You will need this for the next step.
     Now your server is created.
 
 To connect with MySQL workbench:
@@ -65,7 +66,6 @@ To connect with MySQL workbench:
         Download the PEM version.
     In the SSL CA File field, enter the file location of the DigiCertGlobalRootCA.crt.pem file.
     Additionally, place the certificate in your GitHub repository.
-    Enter the same password for the admin user from the Azure Server
     Click Test Connection to test the connection.
     If the connection is successful, click OK to save the connection.
     Your Azure database is now connected to Workbench.
@@ -74,22 +74,24 @@ To create an Azure Web App and deploy the project files to it:
 
     Log in to the Azure portal (https://portal.azure.com/).
     Click on "Create a resource" button in the left menu, then select "Web App".
+    "Name" will be used in your URL. ({webappname}.azurewebsites.net)
     Fill in the required information, such as the subscription, resource group, name of the web app, and operating system.
     Under "Publish", select "Code".
     Under "Runtime stack", select PHP (latest version).
     Under the deployment tab, enable continous deployment, and link the GitHub repository you will use for your project. 
     This connects the Web App to the repository. Once the web app is created, you can deploy your project files by uploading to this repository.
     Under the networking tab, ensure "Enable public access" is on.
-    After the deployment is complete, you can access the web app through its URL in the Azure portal
-    Now select review and create.
+    Click "Review + create".
+    After the deployment is complete, click "Go to resource".
+    Under "Overview", locate "Default domain". This is your web app's URL.
 
 To connect Web App to Azure Database:
 
-    Under configuration, select "New application setting" and enter the following individually:
-        DB_HOST using the server name
-        DB_NAME using admin username
-        DB_PASS using the admin's password
-        DB_NAME using the database name you created earlier.
+    In your web app, under "Configuration", select "New application setting" and enter the following individually:
+        Name: DB_HOST | Value: your server name
+        Name: DB_NAME | Value: admin username
+        Name: DB_PASS | Value: admin's password
+        Name: DB_NAME | Value: database name you created earlier
     Your Azure database is now connected to the Web App.
 
 
