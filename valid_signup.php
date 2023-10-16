@@ -13,8 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     $first_name = $mysqli->real_escape_string($_POST['first_name']);
     $middle_initial = $mysqli->real_escape_string($_POST['middle_initial']);
     $last_name = $mysqli->real_escape_string($_POST['last_name']);
-    $birthday_month = $mysqli->real_escape_string($_POST['birthday_month']);
-    $birthday_day = $mysqli->real_escape_string($_POST['birthday_day']);
+    $birthday = $mysqli->real_escape_string($_POST['birthday']);
     $address = $mysqli->real_escape_string($_POST['address']);
     $address2 = $mysqli->real_escape_string($_POST['address2']);
     $city = $mysqli->real_escape_string($_POST['city']);
@@ -25,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
     // Inserting the data into the database
-    $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday_month, birthday_day, address, address2, city, state, zip_code, phone_number, email, password) 
-            VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday_month', '$birthday_day', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
+    $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday, address, address2, city, state, zip_code, phone_number, email, password) 
+            VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
 
     if ($mysqli->query($sql) === TRUE) {
         // echo "Account created successfully!";
