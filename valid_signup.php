@@ -1,4 +1,6 @@
 <?php
+//gives fatal eror if duplicate user. create error message to handle
+
 
 include 'database.php'; // Include the database connection details
 ini_set('display_errors', 1);
