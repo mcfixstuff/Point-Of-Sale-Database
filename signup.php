@@ -31,7 +31,7 @@
             <label for="birthday_year"></label>
             <input type="number" id="birthday_year" name="birthday_year" pattern="[0-9]{4}" placeholder = "Year" style="width: 55px;">
 
-            <!-- Hidden input to hold the concatenated date -->
+            <!-- hidden input to hold the concatenated date -->
             <input type="hidden" id="birthday" name="birthday">
         </div><br>
 
@@ -41,19 +41,24 @@
                 var month = document.getElementById('birthday_month').value;
                 var year = document.getElementById('birthday_year').value;
 
-                // Ensure all values are filled
                 if (day && month && year) {
                     var formatted = year + '/' + month.padStart(2, '0') + '/' + day.padStart(2, '0');
                     document.getElementById('birthday').value = formatted;
-                    
-                    // If you're using a form, you'd typically submit it here
-                    // document.getElementById('yourFormId').submit();
                 } else {
                     alert("Please fill all date fields");
                 }
             }
         </script>
 
+        <!-- pulls current date and assigns to join_date -->
+        <input type="hidden" id="join_date" name="join_Date">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const currentDate = new Date();
+                const formattedDate = `${currentDate.getFullYear()}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getDate().toString().padStart(2, '0')}`;
+                document.getElementById("join_date").value = formattedDate;
+            });
+        </script>
 
         <div>
             <label for="address">Address  </label>
