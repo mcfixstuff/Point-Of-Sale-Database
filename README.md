@@ -145,7 +145,7 @@ Create an index.php file in GitHub repository. This will be the default web page
         }
 
         .account-input {
-            width: 95%;
+            width: 92%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
