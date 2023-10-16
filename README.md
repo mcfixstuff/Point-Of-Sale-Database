@@ -37,7 +37,7 @@ To create an Azure SQL flexible server:
 
     Log in to the Azure portal (https://portal.azure.com).
     Click on "Create a resource" in the upper left-hand corner of the screen.
-    Search for "Azure SQL" and select "Azure Database for MySQL servers" from the results.
+    Search for "Azure MySQL" and select "Azure Database for MySQL servers" from the results.
     Click "Create" to begin creating the server.
     Select Flexible Server.
     Fill out the required information, such as server name, admin username and password, and location. This will be needed when connecting to Workbench.
