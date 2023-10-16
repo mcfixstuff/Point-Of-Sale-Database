@@ -51,7 +51,7 @@
         </script>
 
         <!-- pulls current date and assigns to join_date -->
-        <input type="hidden" id="join_date" name="join_Date">
+        <input type="hidden" id="join_date" name="join_date">
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const currentDate = new Date();
