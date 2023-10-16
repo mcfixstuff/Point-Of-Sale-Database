@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
 
     // Inserting the data into the database
     $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday, join_date, address, address2, city, state, zip_code, phone_number, email, password) 
-            VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday','$join_date' '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
+            VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday','$join_date', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
 
     if ($mysqli->query($sql) === TRUE) {
         // echo "Account created successfully!";
