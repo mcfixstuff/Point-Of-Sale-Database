@@ -24,10 +24,13 @@
         </div><br>
 
         <div>
-            <label for="birthday">Birthday </label>
-            <input type="text" id="birthday" name="birthday" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}">
+            <label for="birthday_month">Birthday  </label>
+            <input type="number" id="birthday_month" name="birthday_month" min="1" max="12" placeholder="Month" style="width: 50px;">
+            <label for="birthday_day"></label>
+            <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholder = "Day" style="width: 50px;">
+            <label for="birthday_year"></label>
+            <input type="number" id="birthday_year" name="birthday_year" pattern="[0-9]{4}" placeholder = "Year" style="width: 50px;">
         </div><br>
-
 
         <script>
             // JavaScript to get today's date
