@@ -56,7 +56,7 @@
             document.addEventListener("DOMContentLoaded", function() {
                 const currentDate = new Date();
                 const formattedDate = `${currentDate.getFullYear()}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getDate().toString().padStart(2, '0')}`;
-                document.getElementById("join_date").value = formattedDate;
+                document.getElementById('join_date').value = formattedDate;
             });
         </script>
 
