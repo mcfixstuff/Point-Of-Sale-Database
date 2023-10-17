@@ -24,7 +24,8 @@
         </div><br>
 
         <!-- need to set up restictions on days for certain months (i.e. feb cant have more than 28 as day)
-        leap year: if year % 4 = 0 , then feb has 29 days -->
+        leap year: if year % 4 = 0 , then feb has 29 days 
+        year max is the current year -->
         <div>
             <label for="birthday_month">Birthday  </label>
             <input type="number" id="birthday_month" name="birthday_month" min="1" max="12" placeholder="Month" style="width: 55px;">
@@ -32,12 +33,12 @@
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholder = "Day" style="width: 55px;">
             <label for="birthday_year"></label>
             <input type="number" id="birthday_year" name="birthday_year" pattern="[0-9]{4}" placeholder = "Year" style="width: 55px;">
-
-            <!-- hidden input to hold the concatenated date -->
-            <input type="hidden" id="birthday" name="birthday">
         </div><br>
-
+        
+        <!-- hidden input to hold the concatenated date -->
+        <input type="hidden" id="birthday" name="birthday">
         <script>
+            // javascript funciton to format date. function called when form submitted
             function formatDate() {
                 var day = document.getElementById('birthday_day').value;
                 var month = document.getElementById('birthday_month').value;
