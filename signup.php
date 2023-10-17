@@ -138,12 +138,14 @@
 
         <div>
             <label for="phone_number">Phone Number  </label>
-            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter 10 digits" pattern="[0-9]{10}" style="width: 100px;" required>
+            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter 10 digits" pattern="[0-9]{10}" style="width: 120px;" required>
         </div><br>
 
         <div>
             <label for="email">Email  </label>
-            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+            <!-- input requires "@" and "." 
+            currently casues fatal eror if not unique -->
+            <input type="email" id="email" name="email" placeholder="Enter email address" pattern=".*\..*" required>
         </div><br>
 
         <div>
