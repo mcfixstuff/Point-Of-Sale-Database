@@ -152,6 +152,12 @@
             <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
         </div><br>
+        
+        <!-- need to add SQL code to ensure passwords match and set up error if not -->
+        <!-- <div>
+            <label for="password">Confirm Password  </label>
+            <input type="password" id="password" name="password" placeholder="Confirm password" required>
+        </div><br> -->
 
         <div>
             <input class = button type="submit" value="Sign Up" onclick="formatDate()">
