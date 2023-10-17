@@ -23,6 +23,8 @@
             <input type="text" id="last_name" name="last_name" placeholder="Last" style="width: 75px;" required>
         </div><br>
 
+        <!-- need to set up restictions on days for certain months (i.e. feb cant have more than 28 as day)
+        leap year: if year % 4 = 0 , then feb has 29 days -->
         <div>
             <label for="birthday_month">Birthday  </label>
             <input type="number" id="birthday_month" name="birthday_month" min="1" max="12" placeholder="Month" style="width: 55px;">
