@@ -38,10 +38,12 @@
     </div>
     <br>
     <input class = button type="submit" value="Login">
+    
+    <a href="employee_register.php" class="button">Register new employee</a>
 
-    <div>
+    <!-- <div>
       <p><a href="employee_register.php">Register new employee here</a></p>
-    </div>
+    </div> -->
 
 </form> 
 
