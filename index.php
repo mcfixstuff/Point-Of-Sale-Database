@@ -12,12 +12,12 @@
 <form action="" method="post">
     <h2>Welcome to POS Pizza!</h2>
 
-    <a href="login.php" class="button">Login</a>
+    <a href="/login" class="button">Login</a>
 
-    <a href="signup.php" class="button">Sign Up</a>
+    <a href="/signup" class="button">Sign Up</a>
     
     <div>
-      <p><a href="employee.php">Employee login</a></p>
+      <p><a href="/employee">Employee login</a></p>
     </div>
 </form> 
 

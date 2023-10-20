@@ -10,12 +10,12 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <a href="index.php">Home</a>
+        <a href="/index">Home</a>
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
     </div>
 
-<form action="validate_login.php" method="post">
+<form action="/validate_login" method="post">
     <h2>Login to your Employee Account</h2>
     <div>
         <label for="username">Employee ID  </label>
