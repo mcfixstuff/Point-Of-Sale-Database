@@ -37,9 +37,9 @@
     
     <input class="button" type="submit" value="Login">
     
+    <a href="signup.php" class="button" value="Sign up"></a>
+
     <div>
-      <p>Not a member? <a href="signup.php">Sign up now!</a></p>
-      
       <p><a href="employee.php">Employee login</a></p>
     </div>
 </form> 
