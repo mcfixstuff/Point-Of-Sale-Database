@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="/index">Home</a>
+        <a href="index.php">Home</a>
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
     </div>
-    <form action="/valid_signup" method="post">
+    <form action="valid_signup.php" method="post">
         <h2>Create your POS Pizza Account</h2>
         <div>       
             <label for="first_name">Name  </label>
