@@ -6,7 +6,7 @@
     //     exit();
     // } 
 ?>
-
+<!-- Welcome page after user creates new account -->
 <!DOCTYPE html>
 <html>
 <head>

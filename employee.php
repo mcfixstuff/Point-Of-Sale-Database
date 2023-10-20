@@ -39,6 +39,10 @@
     <br>
     <input class = button type="submit" value="Login">
 
+    <div>
+      <p><a href="employee_register.php">Register new employee here</a></p>
+    </div>
+
 </form> 
 
 </body>

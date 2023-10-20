@@ -8,6 +8,7 @@
     // } 
 ?>
 
+<!-- Page after user logs in -->
 <!DOCTYPE html>
 <html>
 <head>
