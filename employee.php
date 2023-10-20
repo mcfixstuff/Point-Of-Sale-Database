@@ -39,8 +39,7 @@
     <br>
     <input class = button type="submit" value="Login">
     
-    <a href="employee_register.php" class="button" value="Register new employee"></a>
-    <!-- <a href="employee_register.php" class="button" value>Register new employee</a> -->
+    <a href="employee_register.php" class="button">Register new employee</a>
 
 
     <!-- <div>

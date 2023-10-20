@@ -36,8 +36,8 @@
     </div> <br>
     
     <input class="button" type="submit" value="Login">
-    
-    <a href="signup.php" class="button" value="Sign up"></a>
+
+    <a href="signup.php" class="button">Sign up</a>
 
     <div>
       <p><a href="employee.php">Employee login</a></p>
