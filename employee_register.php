@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
     // Inserting the data into the database
-    $sql = "INSERT INTO customers (E_First_Name, E_Last_Name, hire_date, Title_Role, Employee_ID,password) 
+    $sql = "INSERT INTO employee (E_First_Name, E_Last_Name, hire_date, Title_Role, Employee_ID,password) 
             VALUES ('$E_First_Name', '$E_Last_Name','$hire_date', '$Title_Role', '$Employee_ID','$password')";
 
     if ($mysqli->query($sql) === TRUE) {
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
 
         <div>
             <label for="Title_Role">Role  </label>
-            <select id="Title_Role" name="Title_Role" placeholder="Select role" style="width: 100px;"required>
+            <select id="Title_Role" name="Title_Role" placeholder="Select role" style="width: 150px;"required>
                 <option value="" selected disabled>Select</option>
                 <option value="Team member">Team Member</option>
                 <option value="Supervisor">Supervisor</option>
