@@ -8,7 +8,7 @@
     error_reporting(E_ALL);
 
     // Only the manager can create accounts
-    if (!isset($_SESSION['Title_Role']) || $_SESSION['Title_Role'] !== 'MAN') {
+    if (!isset($_SESSION['user']['Title_Role']) || $_SESSION['user']['Title_Role'] !== 'MAN') {
         echo "<h2>You don't have permission to do this. You are being redirected.</h2>";
         echo '<script>setTimeout(function(){ window.location.href="index.php"; }, 2000);</script>';
         exit; // Make sure to exit so that the rest of the script won't execute
