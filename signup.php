@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     if ($mysqli->query($sql) === TRUE) {
         // echo "Account created successfully!";
         $mysqli->close();
+        // goes to welcome page when signup but want to go to home.php
         header('Location: welcome.php');
         exit;
     } else {

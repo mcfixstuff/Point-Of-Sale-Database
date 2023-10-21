@@ -10,19 +10,18 @@
         <a href="index.php">Home</a>
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
+        <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo '<a href="logout.php">Logout</a>';
+            }
+        ?>
     </div>
 
-    <?php 
-        include 'database.php';
-        // Check if the first_name is set in the session (or retrieve it from your database if needed)
-        $name = $mysqli->query("SELECT * FROM customers WHERE first_name='$first_name'");
+    <form action="" method="post">
+            <h2>Employee Home Page</h2>
 
-        if (isset($_SESSION['first_name'])) {
-            echo "<h2>Time to order, " . $_SESSION['first_name'] . "!</h2>";
-        } else {
-            echo "<h2>Ready to order</h2>";
-        }
-    ?>
+            
+        </form>
 
 </body>
 </html>
