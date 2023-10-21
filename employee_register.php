@@ -1,6 +1,38 @@
-<!-- Page for creating new employees -->
+<?php
+//gives fatal eror if duplicate user. create error message to handle
 
+include 'database.php'; // Include the database connection details
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
+
+    // Extracting data from the form
+    $E_First_Name = $mysqli->real_escape_string($_POST['E_First_Name']);
+    $E_Last_Name = $mysqli->real_escape_string($_POST['E_Last_Name']);
+    $hire_date = $mysqli->real_escape_string($_POST['hire_date']);
+    $Title_Role = $mysqli->real_escape_string($_POST['Title_Role']);
+    $Employee_ID = $mysqli->real_escape_string($_POST['Employee_ID']);
+    $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
+
+    // Inserting the data into the database
+    $sql = "INSERT INTO customers (E_First_Name, E_Last_Name, hire_date, Title_Role, Employee_ID,password) 
+            VALUES ('$E_First_Name', '$E_Last_Name','$hire_date', '$Title_Role', '$Employee_ID','$password')";
+
+    if ($mysqli->query($sql) === TRUE) {
+        // echo "Account created successfully!";
+        $mysqli->close();
+        header('Location: home_employee.php');
+        exit;
+    } else {
+        echo "Error: " . $sql . "<br>" . $mysqli->error;
+    }
+
+}
+?>
 <!DOCTYPE html>
+<!-- Page for creating new employees -->
 <head>
     <title>Employee Registration</title>
     <link rel="stylesheet" href="styles.css">
@@ -12,7 +44,7 @@
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
     </div>
-    <form action="valid_signup.php" method="post">
+    <form action="employee_register.php" method="post">
         <h2>Create Employee Account</h2>
         <div>       
             <label for="E_First_Name">Name  </label>
@@ -43,7 +75,7 @@
         
         <div>
             <label for="Employee_ID">Employee ID  </label>
-            <input type="text" id="Employee_ID" name="Employee_ID" pattern="\d{6,8}" placeholder="Select an 6-8 digit Employee ID" required>
+            <input type="text" id="Employee_ID" name="Employee_ID" pattern="\d{6,8}" placeholder="6-8 digits required" required>
         </div><br>
 
         <div>
