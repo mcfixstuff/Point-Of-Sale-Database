@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if (password_verify($password, $user['password'])) {
             // Successful login
-            // Start a session and set session variables, or do whatever you want upon a successful login
             session_start();
             $_SESSION['loggedin'] = true;
-            $_SESSION['Employee_ID'] = $user['Employee_ID'];
+            $_SESSION['user'] = $user;  //assigns all employee attributes inside an array
+
             // Redirect to a logged-in page or dashboard
             header("Location: employee_home.php");
         } else {

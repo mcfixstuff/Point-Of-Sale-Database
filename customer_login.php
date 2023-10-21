@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if (password_verify($password, $user['password'])) {
             // Successful login
-            // Start a session and set session variables, or do whatever you want upon a successful login
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['user'] = $user;  //assigns all customer attributes inside an array

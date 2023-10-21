@@ -7,10 +7,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //access customer attributes
     echo "<h2>Welcome back, " . $_SESSION['user']['first_name'] . "!</h2>";
 } else {
+    //if not logged in, will send to default URL
     header("Location: index.php");
 }
 ?>
-
 
 <!-- Page after user logs in -->
 <!DOCTYPE html>
