@@ -52,6 +52,11 @@
         <a href="index.php">Home</a>
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
+        <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo '<a href="logout.php">Logout</a>';
+            }
+        ?>
     </div>
     <form action="employee_register.php" method="post">
         <h2>Create Employee Account</h2>
