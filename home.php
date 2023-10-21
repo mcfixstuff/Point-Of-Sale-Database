@@ -4,7 +4,8 @@ session_start();
 
 // Check if user is logged in
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
+    //access customer attributes
+    echo "<h2>Welcome back, " . $_SESSION['user']['first_name'] . "!</h2>";
 } else {
     echo "Please log in first.";
     header("Location: customer_login.php");

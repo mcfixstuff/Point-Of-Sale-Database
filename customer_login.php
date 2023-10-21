@@ -15,8 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Start a session and set session variables, or do whatever you want upon a successful login
             session_start();
             $_SESSION['loggedin'] = true;
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['user'] = $user;  //assigns all customer attributes inside an array
 
             // Redirect to a logged-in page or dashboard
             header("Location: home.php");
