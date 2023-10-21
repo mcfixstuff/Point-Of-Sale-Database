@@ -1,6 +1,46 @@
-<!-- Signup page for new users -->
+<?php
+//gives fatal eror if duplicate user. create error message to handle
 
+
+include 'database.php'; // Include the database connection details
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
+
+    // Extracting data from the form
+    $first_name = $mysqli->real_escape_string($_POST['first_name']);
+    $middle_initial = $mysqli->real_escape_string($_POST['middle_initial']);
+    $last_name = $mysqli->real_escape_string($_POST['last_name']);
+    $birthday = $mysqli->real_escape_string($_POST['birthday']);
+    $join_date = $mysqli->real_escape_string($_POST['join_date']);
+    $address = $mysqli->real_escape_string($_POST['address']);
+    $address2 = $mysqli->real_escape_string($_POST['address2']);
+    $city = $mysqli->real_escape_string($_POST['city']);
+    $state = $mysqli->real_escape_string($_POST['state']);
+    $zip_code = $mysqli->real_escape_string($_POST['zip_code']);
+    $phone_number = $mysqli->real_escape_string($_POST['phone_number']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
+
+    // Inserting the data into the database
+    $sql = "INSERT INTO customers (first_name, middle_initial, last_name, birthday, join_date, address, address2, city, state, zip_code, phone_number, email, password) 
+            VALUES ('$first_name', '$middle_initial', '$last_name', '$birthday','$join_date', '$address', '$address2', '$city', '$state', '$zip_code', '$phone_number', '$email', '$password')";
+
+    if ($mysqli->query($sql) === TRUE) {
+        // echo "Account created successfully!";
+        $mysqli->close();
+        header('Location: welcome.php');
+        exit;
+    } else {
+        echo "Error: " . $sql . "<br>" . $mysqli->error;
+    }
+
+}
+?>
 <!DOCTYPE html>
+<!-- Signup page for new users -->
 <head>
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="styles.css">
@@ -12,7 +52,7 @@
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
     </div>
-    <form action="valid_signup.php" method="post">
+    <form action="signup.php" method="post">
         <h2>Create your POS Pizza Account</h2>
         <div>       
             <label for="first_name">Name  </label>
@@ -32,7 +72,7 @@
             <label for="birthday_day"></label>
             <input type="number" id="birthday_day" name="birthday_day" min="1" max="31" placeholder = "Day" style="width: 55px;">
             <label for="birthday_year"></label>
-            <input type="number" id="birthday_year" name="birthday_year" pattern="[0-9]{4}" placeholder = "Year" style="width: 55px;">
+            <input type="number" id="birthday_year" name="birthday_year" min="1900" max="2023" pattern="[0-9]{4}" placeholder = "Year" style="width: 55px;">
         </div><br>
         
         <!-- hidden input to hold the concatenated date -->
