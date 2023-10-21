@@ -1,13 +1,16 @@
-<?php 
+<?php
+// Start the session at the beginning of the file
+session_start();
 
-    // session_start();
-    // // Check if the user is not logged in
-    // if (!isset($_SESSION['first_name'])) {
-    //     // Redirect them to the login page
-    //     header('Location: login.php');
-    //     exit(); // stop the further execution of the script
-    // } 
+// Check if user is logged in
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome, " . $_SESSION['email'] . "!";
+} else {
+    echo "Please log in first.";
+    header("Location: customer_login.php");
+}
 ?>
+
 
 <!-- Page after user logs in -->
 <!DOCTYPE html>
@@ -24,18 +27,9 @@
         <a href="#">Profile</a> -->
     </div>
 
-    <?php 
-    include 'database.php';
-    // Check if the first_name is set in the session (or retrieve it from your database if needed)
-    if (isset($_SESSION['first_name'])) {
-        echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
-    } else {
-        echo "<h2>Welcome back to POS Pizza!</h2>";
-    }
-    ?>
 
-    <a href="menu.php" class="button">Order now!</a>
 
+    <a class="button">Order now!</a>
 
 </body>
 </html>
