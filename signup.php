@@ -81,6 +81,7 @@
         <div>
             <label for="state">State  </label>
             <select id="state" name="state" placeholder="Select state" style="width: 100px;"required>
+                <option value="" selected disabled>Select</option>
                 <option value="AL">Alabama</option> <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option> <option value="AR">Arkansas</option>
                 <option value="CA">California</option> <option value="CO">Colorado</option>

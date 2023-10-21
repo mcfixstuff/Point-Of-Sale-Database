@@ -32,13 +32,14 @@
         </script>
 
         <div>
-            <label for="Title_Role">State  </label>
+            <label for="Title_Role">Role  </label>
             <select id="Title_Role" name="Title_Role" placeholder="Select role" style="width: 100px;"required>
+                <option value="" selected disabled>Select</option>
                 <option value="Team member">Team Member</option>
                 <option value="Supervisor">Supervisor</option>
                 <option value="Manager">Manager</option>
         </div><br>
-
+        
         <div>
             <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
