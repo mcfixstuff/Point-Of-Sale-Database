@@ -12,8 +12,8 @@
 <body>
     <div class="navbar">
         <a href="index.php">Home</a>
-        <!-- <a href="#">Order Now</a>
-        <a href="#">Profile</a> -->
+        <a href="menu.php">Order now</a>
+        <!-- <a href="#">Profile</a> -->
         <?php
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo '<a href="logout.php">Logout</a>';
@@ -22,7 +22,7 @@
     </div>
 
     <form action="" method="post">
-            <h2>Employee Home Page</h2>
+            <h2>Menu</h2>
 
             
         </form>
