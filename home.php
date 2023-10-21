@@ -1,4 +1,5 @@
 <?php 
+
     // session_start();
     // // Check if the user is not logged in
     // if (!isset($_SESSION['first_name'])) {
@@ -24,6 +25,7 @@
     </div>
 
     <?php 
+    include 'database.php';
     // Check if the first_name is set in the session (or retrieve it from your database if needed)
     if (isset($_SESSION['first_name'])) {
         echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
@@ -32,7 +34,8 @@
     }
     ?>
 
-    <a class="button">Order now!</a>
+    <a href="menu.php" class="button">Order now!</a>
+
 
 </body>
 </html>
