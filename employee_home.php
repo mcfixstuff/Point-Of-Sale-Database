@@ -9,6 +9,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
     //if not logged in, will send to default URL
     header("Location: index.php");
+    exit(); //ensures code is killed
 }
 ?>
 
@@ -24,6 +25,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <a href="index.php">Home</a>
             <!-- <a href="#">Order Now</a>
             <a href="#">Profile</a> -->
+            <!-- if user is logged in, logout button will display -->
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo '<a href="logout.php">Logout</a>';
+            }
+            ?>
         </div>
         <form action="" method="post">
             <h2>Employee Home Page</h2>
