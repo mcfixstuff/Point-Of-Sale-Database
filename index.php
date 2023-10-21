@@ -17,7 +17,7 @@
     <a href="signup.php" class="button">Sign Up</a>
     
     <div>
-      <p><a href="employee.php">Employee login</a></p>
+      <p><a href="employee_login.php">Employee login</a></p>
     </div>
 </form> 
 

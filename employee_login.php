@@ -1,6 +1,8 @@
-<!-- Employee page. Only validated users will be able to access this page -->
+
+<!-- SQL for validating employee login -->
 
 <!DOCTYPE html>
+<!-- Employee page. Only validated users will be able to access this page -->
 <html>
 <head>
     <title>Employee Login</title>
@@ -15,7 +17,7 @@
         <a href="#">Profile</a> -->
     </div>
 
-<form action="validate_login.php" method="post">
+<form action="employee_login.php" method="post">
     <h2>Login to your Employee Account</h2>
     <div>
         <label for="username">Employee ID  </label>

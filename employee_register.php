@@ -67,9 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
             <label for="Title_Role">Role  </label>
             <select id="Title_Role" name="Title_Role" placeholder="Select role" style="width: 150px;"required>
                 <option value="" selected disabled>Select</option>
-                <option value="Team member">Team Member</option>
-                <option value="Supervisor">Supervisor</option>
-                <option value="Manager">Manager</option>
+                <option value="TM">Team Member</option>
+                <option value="SUP">Supervisor</option>
+                <option value="MAN">Manager</option>
             </select>
         </div><br>
         
