@@ -42,6 +42,11 @@
         </div><br>
         
         <div>
+            <label for="Employee_ID">Employee ID  </label>
+            <input type="text" id="Employee_ID" name="Employee_ID" pattern="\d{6,8}" placeholder="Select an 6-8 digit Employee ID" required>
+        </div><br>
+
+        <div>
             <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
         </div><br>
