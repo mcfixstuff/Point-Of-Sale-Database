@@ -76,13 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input class = button type="submit" value="Login">
     <!-- shift start time begin at submit? shift end when log out? -->
     
-    <a href="employee_register.php" class="button">Register new employee</a>
-
-
-    <!-- <div>
-      <p><a href="employee_register.php">Register new employee here</a></p>
-    </div> -->
-
 </form> 
 
 </body>

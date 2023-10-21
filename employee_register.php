@@ -1,10 +1,17 @@
 <?php
-//gives fatal eror if duplicate user. create error message to handle
+//gives fatal eror if duplicate ID. create error message to handle
 
 include 'database.php'; // Include the database connection details
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Only the manager can create accounts
+if (!isset($_SESSION['Title_Role']) || $_SESSION['Title_Role'] !== 'MAN') {
+    echo "You don't have permission to create new employees. You are being redirected.";
+    echo '<script>setTimeout(function(){ window.location.href="index.php"; }, 2000);</script>';
+    exit; // Make sure to exit so that the rest of the script won't execute
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
 
@@ -23,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submit
     if ($mysqli->query($sql) === TRUE) {
         // echo "Account created successfully!";
         $mysqli->close();
+        // curretly does to main page because not technically logged in to go to employee_home
         header('Location: employee_home.php');
         exit;
     } else {
