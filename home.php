@@ -4,7 +4,7 @@ session_start();
 
 // Check if user is logged in
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "Welcome, " . $_SESSION['email'] . "!";
+    echo "<h2>Welcome back, " . $_SESSION['first_name'] . "!</h2>";
 } else {
     echo "Please log in first.";
     header("Location: customer_login.php");
@@ -26,8 +26,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <!-- <a href="#">Order Now</a>
         <a href="#">Profile</a> -->
     </div>
-
-
 
     <a class="button">Order now!</a>
 
