@@ -7,8 +7,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //access customer attributes
     echo "<h2>Welcome back, " . $_SESSION['user']['first_name'] . "!</h2>";
 } else {
-    echo "Please log in first.";
-    header("Location: customer_login.php");
+    header("Location: index.php");
 }
 ?>
 
