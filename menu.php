@@ -1,3 +1,7 @@
+<?php
+    session_start(); //continues current session to keep user logged in
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
