@@ -12,7 +12,7 @@
 <form action="" method="post">
     <h2>Welcome to POS Pizza!</h2>
 
-    <a href="login.php" class="button">Login</a>
+    <a href="customer_login.php" class="button">Login</a>
 
     <a href="signup.php" class="button">Sign Up</a>
     
