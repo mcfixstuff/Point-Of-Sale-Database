@@ -40,6 +40,7 @@
                 <option value="Manager">Manager</option>
         </div><br>
         
+        <br>
         <div>
             <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
