@@ -1,43 +1,44 @@
 <?php
-//gives fatal eror if duplicate ID. create error message to handle
+    //gives fatal eror if duplicate ID. create error message to handle
+    session_start();
 
-include 'database.php'; // Include the database connection details
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    include 'database.php'; // Include the database connection details
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-// Only the manager can create accounts
-if (!isset($_SESSION['Title_Role']) || $_SESSION['Title_Role'] !== 'MAN') {
-    echo "<h2>You don't have permission to do this. You are being redirected.</h2>";
-    echo '<script>setTimeout(function(){ window.location.href="index.php"; }, 2000);</script>';
-    exit; // Make sure to exit so that the rest of the script won't execute
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
-
-    // Extracting data from the form
-    $E_First_Name = $mysqli->real_escape_string($_POST['E_First_Name']);
-    $E_Last_Name = $mysqli->real_escape_string($_POST['E_Last_Name']);
-    $Hire_Date = $mysqli->real_escape_string($_POST['Hire_Date']);
-    $Title_Role = $mysqli->real_escape_string($_POST['Title_Role']);
-    $Employee_ID = $mysqli->real_escape_string($_POST['Employee_ID']);
-    $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
-
-    // Inserting the data into the database
-    $sql = "INSERT INTO employee (E_First_Name, E_Last_Name, Hire_Date, Title_Role, Employee_ID,password) 
-            VALUES ('$E_First_Name', '$E_Last_Name','$Hire_Date', '$Title_Role', '$Employee_ID','$password')";
-
-    if ($mysqli->query($sql) === TRUE) {
-        // echo "Account created successfully!";
-        $mysqli->close();
-        // curretly does to main page because not technically logged in to go to employee_home
-        header('Location: employee_home.php');
-        exit;
-    } else {
-        echo "Error: " . $sql . "<br>" . $mysqli->error;
+    // Only the manager can create accounts
+    if (!isset($_SESSION['Title_Role']) || $_SESSION['Title_Role'] !== 'MAN') {
+        echo "<h2>You don't have permission to do this. You are being redirected.</h2>";
+        echo '<script>setTimeout(function(){ window.location.href="index.php"; }, 2000);</script>';
+        exit; // Make sure to exit so that the rest of the script won't execute
     }
 
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
+
+        // Extracting data from the form
+        $E_First_Name = $mysqli->real_escape_string($_POST['E_First_Name']);
+        $E_Last_Name = $mysqli->real_escape_string($_POST['E_Last_Name']);
+        $Hire_Date = $mysqli->real_escape_string($_POST['Hire_Date']);
+        $Title_Role = $mysqli->real_escape_string($_POST['Title_Role']);
+        $Employee_ID = $mysqli->real_escape_string($_POST['Employee_ID']);
+        $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
+
+        // Inserting the data into the database
+        $sql = "INSERT INTO employee (E_First_Name, E_Last_Name, Hire_Date, Title_Role, Employee_ID,password) 
+                VALUES ('$E_First_Name', '$E_Last_Name','$Hire_Date', '$Title_Role', '$Employee_ID','$password')";
+
+        if ($mysqli->query($sql) === TRUE) {
+            // echo "Account created successfully!";
+            $mysqli->close();
+            // curretly does to main page because not technically logged in to go to employee_home
+            header('Location: employee_home.php');
+            exit;
+        } else {
+            echo "Error: " . $sql . "<br>" . $mysqli->error;
+        }
+
+    }
 ?>
 <!DOCTYPE html>
 <!-- Page for creating new employees -->
