@@ -38,9 +38,9 @@
                 <option value="Team member">Team Member</option>
                 <option value="Supervisor">Supervisor</option>
                 <option value="Manager">Manager</option>
+            </select>
         </div><br>
         
-        <br>
         <div>
             <label for="password">Password  </label>
             <input type="password" id="password" name="password" placeholder="Create password" required>
