@@ -1,5 +1,39 @@
+<?php
+include 'database.php';
 
-<!-- SQL for validating employee login -->
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $Employee_ID = $mysqli->real_escape_string($_POST['Employee_ID']);
+    $password = $_POST['password'];
+
+    $result = $mysqli->query("SELECT * FROM employee WHERE Employee_ID='$Employee_ID'");
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        
+        if (password_verify($password, $user['password'])) {
+            // Successful login
+            // Start a session and set session variables, or do whatever you want upon a successful login
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['Employee_ID'] = $user['Employee_ID'];
+            // Redirect to a logged-in page or dashboard
+            header("Location: employee_home.php");
+        } else {
+            // Password doesn't match
+            // echo "<h2>Incorrect password</h2>";
+            session_start();
+            $_SESSION['error'] = "Incorrect password!";
+            header("Location: employee_login.php"); 
+        }
+    } else {
+        // User doesn't exist
+        // echo "<h2>Email not found</h2>";
+        session_start();
+        $_SESSION['error'] = "Employee ID not found";
+        header("Location: employee_login.php"); 
+    }
+}
+?>
 
 <!DOCTYPE html>
 <!-- Employee page. Only validated users will be able to access this page -->
@@ -23,8 +57,8 @@
         <label for="username">Employee ID  </label>
         <input 
             type="text" 
-            id="employeeID" 
-            name="employeeID"
+            id="Employee_ID" 
+            name="Employee_ID"
             placeholder="Enter employee ID"
             required>
     </div>
@@ -40,6 +74,7 @@
     </div>
     <br>
     <input class = button type="submit" value="Login">
+    <!-- shift start time begin at submit? shift end when log out? -->
     
     <a href="employee_register.php" class="button">Register new employee</a>
 
