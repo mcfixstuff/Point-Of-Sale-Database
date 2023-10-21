@@ -10,7 +10,7 @@
     // Redirects if not manager or accessed directly via URL
     if (!isset($_SESSION['user']['Title_Role']) || $_SESSION['user']['Title_Role'] !== 'MAN') {
         echo "<h2>You don't have permission to do this. You are being redirected.</h2>";
-        echo '<script>setTimeout(function(){ window.location.href="index.php"; }, 2000);</script>';
+        echo '<script>setTimeout(function(){ window.location.href="employee_login.php"; }, 1500);</script>';
         exit; // Make sure to exit so that the rest of the script won't execute
     }
 
