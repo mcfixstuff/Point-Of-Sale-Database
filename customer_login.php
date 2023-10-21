@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $user['email'];
+            $_SESSION['first_name'] = $user['first_name'];
+
             // Redirect to a logged-in page or dashboard
             header("Location: home.php");
         } else {
