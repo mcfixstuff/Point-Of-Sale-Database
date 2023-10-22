@@ -14,6 +14,10 @@
         exit; // Make sure to exit so that the rest of the script won't execute
     }
 
+    //get list of supervisors from database
+    $supervisors = $mysqli->query("SELECT * FROM employee WHERE Title_Role='SUP'");
+
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") { // Check if the form has been submitted
 
         // Extracting data from the form
@@ -84,6 +88,20 @@
                 <option value="TM">Team Member</option>
                 <option value="SUP">Supervisor</option>
                 <option value="MAN">Manager</option>
+            </select>
+        </div><br>
+
+        <div>
+            <label for="Supervisor_ID">Supervisor </label>
+            <select id="Supervisor_ID" name="Supervisor_ID" required>
+                <option value="" selected disabled>Assign Supervisor</option>
+                <?php
+                if ($supervisors->num_rows > 0) {
+                    while($row = $supervisors->fetch_assoc()) {
+                        echo '<option value="' . $row["Employee_ID"] . '">' . $row["E_First_Name"] . ' ' . $row["E_Last_Name"] . '</option>';
+                    }
+                }
+                ?>
             </select>
         </div><br>
         
