@@ -38,9 +38,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             
         </form>
-
-        <a href="employee_register.php" class="button">Create employee accounts</a>
-
+        
+        <?php
+            if (!isset($_SESSION['user']['Title_Role']) || $_SESSION['user']['Title_Role'] !== 'MAN') {
+                echo '<a href="employee_register.php" class="button">Create employee accounts</a>';
+            }
+        ?>
 
     </body>
 </html>
