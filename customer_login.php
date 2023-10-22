@@ -48,10 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="navbar">
         <a href="index.php">Home</a>
-      <p><a href="employee_login.php">Employee Home</a></p>
-
-        <!-- <a href="#">Order Now</a>
-        <a href="#">Profile</a> -->
+        <a href="employee_login.php">Employee Home</a>
     </div>  
 
 <form action="customer_login.php" method="post">
