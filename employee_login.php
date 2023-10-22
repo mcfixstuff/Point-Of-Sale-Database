@@ -15,7 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['user'] = $user;  //assigns all employee attributes inside an array
-            $_SESSION['user']['clocked_in'] = 1; //mark employee clocked in when they log in
+
+            //Updates clocked in to true when employee logs in
+            $Employee_ID = $user['Employee_ID'];
+            $mysqli->query("UPDATE employee SET clocked_in=1 WHERE Employee_ID='$Employee_ID'");
 
 
             // Redirect to a logged-in page or dashboard
