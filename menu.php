@@ -1,5 +1,6 @@
 <?php
     session_start(); //continues current session to keep user logged in
+    //dont have to be logged in to access this page so guest can still order
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,8 @@
         <?php
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo '<a href="logout.php">Logout</a>';
+            } else {
+                echo '<a href="customer_login.php">Log in</a>';
             }
         ?>
     </div>
