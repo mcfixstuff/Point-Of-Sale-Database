@@ -33,13 +33,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             }
             ?>
         </div>
+
         <form action="" method="post">
             <h2>Employee Home Page</h2>
 
             
         </form>
         
-        <?php
+        <?php // only managers will see the create employee account button
             if ($_SESSION['user']['Title_Role'] == 'MAN') {
                 echo '<a href="employee_register.php" class="button">Create employee accounts</a>';
             }
