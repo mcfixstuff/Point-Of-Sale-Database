@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['user'] = $user;  //assigns all employee attributes inside an array
+            $_SESSION['user']['clocked_in'] = 1; //mark employee clocked in when they log in
+
 
             // Redirect to a logged-in page or dashboard
             header("Location: employee_home.php");
@@ -27,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // User doesn't exist
-        // echo "<h2>Email not found</h2>";
+        echo "<h2>Employee ID not found</h2>";
         session_start();
         $_SESSION['error'] = "Employee ID not found";
         header("Location: employee_login.php"); 
