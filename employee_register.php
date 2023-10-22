@@ -25,12 +25,13 @@
         $E_Last_Name = $mysqli->real_escape_string($_POST['E_Last_Name']);
         $Hire_Date = $mysqli->real_escape_string($_POST['Hire_Date']);
         $Title_Role = $mysqli->real_escape_string($_POST['Title_Role']);
+        $Supervisor_ID = $mysqli->real_escape_string($_POST['Supervisor_ID']);
         $Employee_ID = $mysqli->real_escape_string($_POST['Employee_ID']);
         $password = password_hash($mysqli->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hashing the password before storing it in the database
 
         // Inserting the data into the database
-        $sql = "INSERT INTO employee (E_First_Name, E_Last_Name, Hire_Date, Title_Role, Employee_ID,password) 
-                VALUES ('$E_First_Name', '$E_Last_Name','$Hire_Date', '$Title_Role', '$Employee_ID','$password')";
+        $sql = "INSERT INTO employee (E_First_Name, E_Last_Name, Hire_Date, Title_Role, Supervisor_ID, Employee_ID, password) 
+                VALUES ('$E_First_Name', '$E_Last_Name','$Hire_Date', '$Title_Role', '$Supervisor_ID', '$Employee_ID','$password')";
 
         if ($mysqli->query($sql) === TRUE) {
             // echo "Account created successfully!";
